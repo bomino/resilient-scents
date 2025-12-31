@@ -1,0 +1,347 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import products from '../data/products.json';
+
+const categories = ['all', 'women', 'men', 'unisex'];
+---
+
+<MainLayout title="Shop" description="Explore our curated collection of premium fragrance oils and body butters. Find your signature scent and embrace your resilience.">
+
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-16 lg:pt-40 lg:pb-24 bg-gradient-to-b from-mint-100/50 to-white overflow-hidden">
+    <!-- Background Elements -->
+    <div class="absolute top-20 right-0 w-[400px] h-[400px] bg-gradient-to-br from-mint-200/30 to-mint-300/20 blob opacity-60 blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-gradient-to-tr from-navy-100/20 to-mint-200/10 blob-2 opacity-40 blur-3xl"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="max-w-2xl">
+        <span class="inline-block px-4 py-1 bg-mint-100 text-navy-700 text-xs font-medium tracking-widest uppercase mb-4 animate-fade-in">
+          The Collection
+        </span>
+        <h1 class="font-display text-5xl lg:text-6xl font-medium text-navy-900 mb-4 animate-fade-in-up animation-delay-100">
+          Find Your Scent
+        </h1>
+        <p class="font-body text-xl text-slate-600 leading-relaxed animate-fade-in-up animation-delay-200">
+          Every fragrance tells a story. Discover the one that speaks to your journey of strength and self-love.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shop Section -->
+  <section class="py-16 lg:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <!-- Filters & Search Bar -->
+      <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 mb-12 pb-8 border-b border-slate-200">
+        <!-- Category Filters -->
+        <div class="flex flex-wrap gap-2" id="category-filters">
+          {categories.map((category) => (
+            <button
+              class={`px-5 py-2.5 text-sm font-medium tracking-wide transition-all duration-300 filter-btn ${
+                category === 'all'
+                  ? 'bg-navy-800 text-white'
+                  : 'bg-mint-50 text-slate-600 hover:bg-mint-100'
+              }`}
+              data-category={category}
+            >
+              {category === 'all' ? 'All Products' : category.charAt(0).toUpperCase() + category.slice(1)}
+            </button>
+          ))}
+        </div>
+
+        <!-- Search & Sort -->
+        <div class="flex flex-col sm:flex-row gap-4">
+          <!-- Search -->
+          <div class="relative">
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Search products..."
+              class="w-full sm:w-64 pl-10 pr-4 py-2.5 bg-mint-50 border border-slate-200 text-navy-900 placeholder-slate-400 text-sm focus:outline-none focus:border-navy-400 transition-colors"
+            />
+            <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </div>
+
+          <!-- Sort -->
+          <select
+            id="sort-select"
+            class="px-4 py-2.5 bg-mint-50 border border-slate-200 text-slate-700 text-sm focus:outline-none focus:border-navy-400 cursor-pointer"
+          >
+            <option value="featured">Featured</option>
+            <option value="name-asc">Name (A-Z)</option>
+            <option value="name-desc">Name (Z-A)</option>
+            <option value="price-asc">Price (Low to High)</option>
+            <option value="price-desc">Price (High to Low)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Results Count -->
+      <div class="mb-8">
+        <p class="text-sm text-slate-500" id="results-count">
+          Showing <span class="font-medium text-slate-700" id="count-number">{products.length}</span> products
+        </p>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8" id="products-grid">
+        {products.map((product, index) => (
+          <a
+            href={`/shop/${product.slug}`}
+            class="product-card group block bg-mint-50/50 transition-all duration-500 hover:shadow-2xl hover:shadow-navy-900/10"
+            data-category={product.category}
+            data-name={product.name.toLowerCase()}
+            data-price={product.price}
+            data-featured={product.featured ? 'true' : 'false'}
+            style={`animation-delay: ${index * 50}ms`}
+          >
+            <!-- Image Container -->
+            <div class="relative aspect-[3/4] overflow-hidden bg-gradient-to-br from-mint-100 to-white">
+              <!-- Product Image -->
+              <img
+                src={product.images[0]}
+                alt={product.name}
+                class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+
+              <!-- Badge -->
+              {product.badge && (
+                <div class="absolute top-3 left-3 z-10">
+                  <span class="inline-block px-2.5 py-1 bg-navy-800 text-white text-xs font-medium tracking-wide">
+                    {product.badge}
+                  </span>
+                </div>
+              )}
+
+              <!-- Category Badge -->
+              <div class="absolute top-3 right-3 z-10">
+                <span class="inline-block px-2.5 py-1 bg-white/90 backdrop-blur-sm text-slate-600 text-xs font-medium tracking-wide capitalize">
+                  {product.category}
+                </span>
+              </div>
+
+              <!-- Quick View -->
+              <div class="absolute inset-x-3 bottom-3 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                <span class="flex items-center justify-center w-full py-2.5 bg-white text-navy-900 text-sm font-medium hover:bg-navy-600 hover:text-white transition-colors">
+                  View Details
+                  <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </span>
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="p-4">
+              <div class="flex items-start justify-between gap-3 mb-1.5">
+                <h3 class="font-display text-lg font-medium text-navy-900 group-hover:text-navy-600 transition-colors">
+                  {product.name}
+                </h3>
+                <span class="font-body text-base font-medium text-navy-600 whitespace-nowrap">
+                  ${product.price}
+                </span>
+              </div>
+
+              <p class="font-accent text-sm italic text-slate-500 mb-2.5">
+                {product.tagline}
+              </p>
+
+              <!-- Scent Notes -->
+              <div class="flex flex-wrap gap-1">
+                {product.scent_notes.top.slice(0, 2).map((note: string) => (
+                  <span class="px-2 py-0.5 bg-mint-100 text-navy-700 text-xs rounded-full">
+                    {note}
+                  </span>
+                ))}
+                {product.scent_notes.base.slice(0, 1).map((note: string) => (
+                  <span class="px-2 py-0.5 bg-navy-100 text-navy-600 text-xs rounded-full">
+                    {note}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <!-- No Results Message -->
+      <div class="hidden text-center py-16" id="no-results">
+        <div class="max-w-md mx-auto">
+          <div class="w-20 h-20 mx-auto mb-6 bg-mint-100 rounded-full flex items-center justify-center">
+            <svg class="w-10 h-10 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </div>
+          <h3 class="font-display text-2xl font-medium text-navy-900 mb-2">No products found</h3>
+          <p class="text-slate-500 mb-6">Try adjusting your search or filters to discover more products.</p>
+          <button class="btn-secondary" id="clear-filters">
+            Clear Filters
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</MainLayout>
+
+<script>
+  // Product filtering and sorting functionality
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const searchInput = document.getElementById('search-input') as HTMLInputElement;
+  const sortSelect = document.getElementById('sort-select') as HTMLSelectElement;
+  const productsGrid = document.getElementById('products-grid');
+  const productCards = document.querySelectorAll('.product-card');
+  const countNumber = document.getElementById('count-number');
+  const noResults = document.getElementById('no-results');
+  const clearFiltersBtn = document.getElementById('clear-filters');
+
+  let currentCategory = 'all';
+  let currentSearch = '';
+  let currentSort = 'featured';
+
+  // Filter by category
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const category = btn.getAttribute('data-category') || 'all';
+      currentCategory = category;
+
+      // Update button styles
+      filterButtons.forEach(b => {
+        b.classList.remove('bg-navy-800', 'text-white');
+        b.classList.add('bg-mint-50', 'text-slate-600');
+      });
+      btn.classList.remove('bg-mint-50', 'text-slate-600');
+      btn.classList.add('bg-navy-800', 'text-white');
+
+      applyFilters();
+    });
+  });
+
+  // Search functionality
+  searchInput?.addEventListener('input', (e) => {
+    currentSearch = (e.target as HTMLInputElement).value.toLowerCase();
+    applyFilters();
+  });
+
+  // Sort functionality
+  sortSelect?.addEventListener('change', (e) => {
+    currentSort = (e.target as HTMLSelectElement).value;
+    applyFilters();
+  });
+
+  // Clear filters
+  clearFiltersBtn?.addEventListener('click', () => {
+    currentCategory = 'all';
+    currentSearch = '';
+    currentSort = 'featured';
+
+    if (searchInput) searchInput.value = '';
+    if (sortSelect) sortSelect.value = 'featured';
+
+    filterButtons.forEach(btn => {
+      btn.classList.remove('bg-navy-800', 'text-white');
+      btn.classList.add('bg-mint-50', 'text-slate-600');
+    });
+    filterButtons[0]?.classList.remove('bg-mint-50', 'text-slate-600');
+    filterButtons[0]?.classList.add('bg-navy-800', 'text-white');
+
+    applyFilters();
+  });
+
+  function applyFilters() {
+    const cards = Array.from(productCards) as HTMLElement[];
+    let visibleCount = 0;
+
+    // Filter cards
+    cards.forEach(card => {
+      const category = card.getAttribute('data-category');
+      const name = card.getAttribute('data-name') || '';
+
+      const matchesCategory = currentCategory === 'all' || category === currentCategory;
+      const matchesSearch = name.includes(currentSearch);
+
+      if (matchesCategory && matchesSearch) {
+        card.style.display = 'block';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    // Sort visible cards
+    const visibleCards = cards.filter(card => card.style.display !== 'none');
+    sortCards(visibleCards);
+
+    // Update count
+    if (countNumber) countNumber.textContent = visibleCount.toString();
+
+    // Show/hide no results message
+    if (noResults && productsGrid) {
+      if (visibleCount === 0) {
+        noResults.classList.remove('hidden');
+        productsGrid.classList.add('hidden');
+      } else {
+        noResults.classList.add('hidden');
+        productsGrid.classList.remove('hidden');
+      }
+    }
+  }
+
+  function sortCards(cards: HTMLElement[]) {
+    const sorted = [...cards].sort((a, b) => {
+      switch (currentSort) {
+        case 'name-asc':
+          return (a.getAttribute('data-name') || '').localeCompare(b.getAttribute('data-name') || '');
+        case 'name-desc':
+          return (b.getAttribute('data-name') || '').localeCompare(a.getAttribute('data-name') || '');
+        case 'price-asc':
+          return parseFloat(a.getAttribute('data-price') || '0') - parseFloat(b.getAttribute('data-price') || '0');
+        case 'price-desc':
+          return parseFloat(b.getAttribute('data-price') || '0') - parseFloat(a.getAttribute('data-price') || '0');
+        case 'featured':
+        default:
+          const aFeatured = a.getAttribute('data-featured') === 'true';
+          const bFeatured = b.getAttribute('data-featured') === 'true';
+          return bFeatured ? 1 : aFeatured ? -1 : 0;
+      }
+    });
+
+    // Reorder DOM
+    sorted.forEach(card => {
+      productsGrid?.appendChild(card);
+    });
+  }
+
+  // Check for URL params on load
+  const urlParams = new URLSearchParams(window.location.search);
+  const categoryParam = urlParams.get('category');
+  if (categoryParam && ['women', 'men', 'unisex'].includes(categoryParam)) {
+    currentCategory = categoryParam;
+    filterButtons.forEach(btn => {
+      btn.classList.remove('bg-navy-800', 'text-white');
+      btn.classList.add('bg-mint-50', 'text-slate-600');
+      if (btn.getAttribute('data-category') === categoryParam) {
+        btn.classList.remove('bg-mint-50', 'text-slate-600');
+        btn.classList.add('bg-navy-800', 'text-white');
+      }
+    });
+    applyFilters();
+  }
+</script>
+
+<style>
+  .product-card {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

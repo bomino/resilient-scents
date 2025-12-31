@@ -1,0 +1,168 @@
+---
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/shop', label: 'Shop' },
+  { href: '/about', label: 'About' },
+  { href: '/faq', label: 'FAQ' },
+  { href: '/contact', label: 'Contact' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-500" id="main-nav">
+  <div class="absolute inset-0 bg-white/90 backdrop-blur-md border-b border-slate-200/50 opacity-0 transition-opacity duration-300" id="nav-bg"></div>
+
+  <nav class="relative max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20 lg:h-24">
+      <!-- Logo -->
+      <a href="/" class="relative z-10 flex items-center gap-3">
+        <img
+          src="/images/logo.png"
+          alt="Resilient Scents"
+          class="h-12 lg:h-16 w-auto"
+        />
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden lg:flex items-center gap-12">
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            class={`relative font-body text-sm tracking-wide transition-colors duration-300 ${
+              currentPath === link.href
+                ? 'text-navy-600'
+                : 'text-slate-700 hover:text-navy-600'
+            }`}
+          >
+            {link.label}
+            {currentPath === link.href && (
+              <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-navy-600"></span>
+            )}
+          </a>
+        ))}
+      </div>
+
+      <!-- CTA Button (Desktop) -->
+      <div class="hidden lg:block">
+        <a href="/shop" class="btn-primary text-sm">
+          Shop Now
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        class="relative z-10 lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5"
+        id="mobile-menu-btn"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+      >
+        <span class="w-6 h-0.5 bg-slate-900 transition-all duration-300 origin-center" id="menu-line-1"></span>
+        <span class="w-6 h-0.5 bg-slate-900 transition-all duration-300" id="menu-line-2"></span>
+        <span class="w-4 h-0.5 bg-slate-900 transition-all duration-300 origin-center ml-auto" id="menu-line-3"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div
+    class="fixed inset-0 bg-mint-300 z-40 lg:hidden transform translate-x-full transition-transform duration-500 ease-out"
+    id="mobile-menu"
+  >
+    <div class="flex flex-col h-full pt-24 px-8 pb-12">
+      <!-- Mobile Nav Links -->
+      <nav class="flex-grow flex flex-col justify-center">
+        {navLinks.map((link, index) => (
+          <a
+            href={link.href}
+            class={`font-display text-4xl sm:text-5xl font-medium py-4 transform translate-x-8 opacity-0 transition-all duration-500 mobile-nav-link ${
+              currentPath === link.href ? 'text-navy-800' : 'text-navy-600 hover:text-navy-800'
+            }`}
+            style={`transition-delay: ${index * 100}ms`}
+          >
+            {link.label}
+          </a>
+        ))}
+      </nav>
+
+      <!-- Mobile CTA -->
+      <div class="transform translate-y-4 opacity-0 transition-all duration-500 delay-500" id="mobile-cta">
+        <a href="/shop" class="btn-primary w-full text-center">
+          Shop Now
+        </a>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="mt-8 transform translate-y-4 opacity-0 transition-all duration-500 delay-600" id="mobile-social">
+        <p class="text-navy-700 font-medium mb-2">Call or Text:</p>
+        <a href="tel:919-295-0397" class="text-navy-800 text-xl font-display hover:underline">
+          919-295-0397
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuLine1 = document.getElementById('menu-line-1');
+  const menuLine2 = document.getElementById('menu-line-2');
+  const menuLine3 = document.getElementById('menu-line-3');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+  const mobileCta = document.getElementById('mobile-cta');
+  const mobileSocial = document.getElementById('mobile-social');
+  const mainNav = document.getElementById('main-nav');
+  const navBg = document.getElementById('nav-bg');
+
+  let isMenuOpen = false;
+
+  mobileMenuBtn?.addEventListener('click', () => {
+    isMenuOpen = !isMenuOpen;
+    mobileMenuBtn.setAttribute('aria-expanded', isMenuOpen.toString());
+
+    if (isMenuOpen) {
+      mobileMenu?.classList.remove('translate-x-full');
+      menuLine1?.classList.add('rotate-45', 'translate-y-2');
+      menuLine2?.classList.add('opacity-0');
+      menuLine3?.classList.add('-rotate-45', '-translate-y-2', 'w-6');
+      document.body.style.overflow = 'hidden';
+
+      // Animate in mobile nav items
+      setTimeout(() => {
+        mobileNavLinks.forEach(link => {
+          link.classList.remove('translate-x-8', 'opacity-0');
+        });
+        mobileCta?.classList.remove('translate-y-4', 'opacity-0');
+        mobileSocial?.classList.remove('translate-y-4', 'opacity-0');
+      }, 100);
+    } else {
+      mobileMenu?.classList.add('translate-x-full');
+      menuLine1?.classList.remove('rotate-45', 'translate-y-2');
+      menuLine2?.classList.remove('opacity-0');
+      menuLine3?.classList.remove('-rotate-45', '-translate-y-2', 'w-6');
+      document.body.style.overflow = '';
+
+      // Reset mobile nav items
+      mobileNavLinks.forEach(link => {
+        link.classList.add('translate-x-8', 'opacity-0');
+      });
+      mobileCta?.classList.add('translate-y-4', 'opacity-0');
+      mobileSocial?.classList.add('translate-y-4', 'opacity-0');
+    }
+  });
+
+  // Scroll effect for navigation background
+  let lastScroll = 0;
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.scrollY;
+
+    if (currentScroll > 50) {
+      navBg?.classList.add('opacity-100');
+    } else {
+      navBg?.classList.remove('opacity-100');
+    }
+
+    lastScroll = currentScroll;
+  });
+</script>

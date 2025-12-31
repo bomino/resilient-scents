@@ -1,0 +1,196 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import faqData from '../data/faq.json';
+
+// Group FAQ by category
+const categories = [...new Set(faqData.map(item => item.category))];
+const faqByCategory = categories.reduce((acc, category) => {
+  acc[category] = faqData.filter(item => item.category === category);
+  return acc;
+}, {} as Record<string, typeof faqData>);
+---
+
+<MainLayout title="FAQ" description="Frequently asked questions about Resilient Scents fragrance oils and body butters. Learn about ingredients, application, shipping, and more.">
+
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-16 lg:pt-40 lg:pb-24 bg-gradient-to-b from-mint-100/50 to-white overflow-hidden">
+    <div class="absolute top-20 right-0 w-[400px] h-[400px] bg-gradient-to-br from-mint-200/30 to-mint-300/20 blob opacity-50 blur-3xl"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center">
+        <span class="inline-block px-4 py-1 bg-mint-100 text-navy-700 text-xs font-medium tracking-widest uppercase mb-6 animate-fade-in">
+          Support
+        </span>
+        <h1 class="font-display text-5xl lg:text-6xl font-medium text-navy-900 mb-6 animate-fade-in-up animation-delay-100">
+          Frequently Asked
+          <span class="block text-gradient">Questions</span>
+        </h1>
+        <p class="font-body text-xl text-slate-600 leading-relaxed animate-fade-in-up animation-delay-200">
+          Everything you need to know about our fragrance oils, body butters, and how to make the most of your experience.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Categories Navigation -->
+  <section class="sticky top-20 z-30 bg-white border-b border-slate-200">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8">
+      <div class="flex overflow-x-auto gap-2 py-4 no-scrollbar" id="category-nav">
+        {categories.map((category, index) => (
+          <a
+            href={`#${category.toLowerCase().replace(/\s+/g, '-')}`}
+            class={`flex-shrink-0 px-5 py-2.5 text-sm font-medium tracking-wide transition-all duration-300 ${
+              index === 0
+                ? 'bg-navy-800 text-white'
+                : 'bg-mint-50 text-slate-600 hover:bg-mint-100'
+            }`}
+            data-category={category}
+          >
+            {category}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Content -->
+  <section class="py-16 lg:py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8">
+      <div class="space-y-16">
+        {categories.map((category) => (
+          <div id={category.toLowerCase().replace(/\s+/g, '-')} class="scroll-mt-40">
+            <h2 class="font-display text-2xl lg:text-3xl font-medium text-navy-900 mb-8 pb-4 border-b border-slate-200">
+              {category}
+            </h2>
+
+            <div class="space-y-4">
+              {faqByCategory[category].map((item) => (
+                <div class="faq-item bg-mint-50/50 overflow-hidden">
+                  <button
+                    class="w-full px-6 py-5 flex items-start justify-between gap-4 text-left faq-trigger"
+                    aria-expanded="false"
+                  >
+                    <span class="font-display text-lg font-medium text-navy-900 pr-4">
+                      {item.question}
+                    </span>
+                    <span class="flex-shrink-0 w-6 h-6 flex items-center justify-center text-navy-600 transition-transform duration-300 faq-icon">
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </span>
+                  </button>
+                  <div class="faq-content hidden">
+                    <div class="px-6 pb-6">
+                      <p class="font-body text-slate-600 leading-relaxed">
+                        {item.answer}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Still Have Questions -->
+  <section class="py-16 lg:py-24 bg-navy-800 text-white">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+      <div class="w-20 h-20 mx-auto mb-6 bg-mint-500/20 rounded-full flex items-center justify-center">
+        <svg class="w-10 h-10 text-mint-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+        </svg>
+      </div>
+      <h2 class="font-display text-3xl lg:text-4xl font-medium mb-4">
+        Still Have Questions?
+      </h2>
+      <p class="font-body text-slate-300 text-lg mb-4 max-w-xl mx-auto">
+        We're here to help! Reach out and we'll get back to you as soon as possible.
+      </p>
+      <p class="font-body text-mint-400 text-xl mb-8">
+        Call or Text: <a href="tel:919-295-0397" class="hover:text-mint-300 transition-colors font-medium">919-295-0397</a>
+      </p>
+      <a href="/contact" class="btn-primary">
+        Contact Us
+        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+    </div>
+  </section>
+
+</MainLayout>
+
+<script>
+  // FAQ Accordion functionality
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach(item => {
+    const trigger = item.querySelector('.faq-trigger');
+    const content = item.querySelector('.faq-content');
+    const icon = item.querySelector('.faq-icon');
+
+    trigger?.addEventListener('click', () => {
+      const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+
+      // Close all other items
+      faqItems.forEach(otherItem => {
+        if (otherItem !== item) {
+          const otherTrigger = otherItem.querySelector('.faq-trigger');
+          const otherContent = otherItem.querySelector('.faq-content');
+          const otherIcon = otherItem.querySelector('.faq-icon');
+          otherTrigger?.setAttribute('aria-expanded', 'false');
+          otherContent?.classList.add('hidden');
+          otherIcon?.classList.remove('rotate-180');
+        }
+      });
+
+      // Toggle current item
+      trigger.setAttribute('aria-expanded', (!isOpen).toString());
+      content?.classList.toggle('hidden');
+      icon?.classList.toggle('rotate-180');
+    });
+  });
+
+  // Category navigation active state
+  const categoryLinks = document.querySelectorAll('#category-nav a');
+  const sections = document.querySelectorAll('section[id]');
+
+  function updateActiveCategory() {
+    const scrollPos = window.scrollY + 200;
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      const sectionId = section.getAttribute('id');
+
+      if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+        categoryLinks.forEach(link => {
+          const href = link.getAttribute('href')?.replace('#', '');
+          if (href === sectionId) {
+            categoryLinks.forEach(l => {
+              l.classList.remove('bg-navy-800', 'text-white');
+              l.classList.add('bg-mint-50', 'text-slate-600');
+            });
+            link.classList.remove('bg-mint-50', 'text-slate-600');
+            link.classList.add('bg-navy-800', 'text-white');
+          }
+        });
+      }
+    });
+  }
+
+  window.addEventListener('scroll', updateActiveCategory);
+</script>
+
+<style>
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>

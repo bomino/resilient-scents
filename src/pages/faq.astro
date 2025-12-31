@@ -2,6 +2,8 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import faqData from '../data/faq.json';
 
+const base = import.meta.env.BASE_URL;
+
 // Group FAQ by category
 const categories = [...new Set(faqData.map(item => item.category))];
 const faqByCategory = categories.reduce((acc, category) => {
@@ -110,9 +112,9 @@ const faqByCategory = categories.reduce((acc, category) => {
         We're here to help! Reach out and we'll get back to you as soon as possible.
       </p>
       <p class="font-body text-mint-400 text-xl mb-8">
-        Call or Text: <a href="tel:919-295-0397" class="hover:text-mint-300 transition-colors font-medium">919-295-0397</a>
+        Call or Text: <a href="tel:347-806-3191" class="hover:text-mint-300 transition-colors font-medium">347-806-3191</a>
       </p>
-      <a href="/contact" class="btn-primary">
+      <a href={`${base}contact/`} class="btn-primary">
         Contact Us
         <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />

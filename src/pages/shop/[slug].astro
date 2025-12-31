@@ -9,7 +9,16 @@ export function getStaticPaths() {
   }));
 }
 
+const base = import.meta.env.BASE_URL;
 const { product } = Astro.props;
+
+// Helper to fix image paths for base URL
+const getImagePath = (imagePath: string) => {
+  if (imagePath.startsWith('/')) {
+    return `${base}${imagePath.slice(1)}`;
+  }
+  return imagePath;
+};
 
 // Get related products (same category, excluding current)
 const relatedProducts = products
@@ -25,9 +34,9 @@ const relatedProducts = products
   <div class="pt-24 lg:pt-28 bg-white">
     <div class="max-w-7xl mx-auto px-6 lg:px-8 py-4">
       <nav class="flex items-center gap-2 text-sm">
-        <a href="/" class="text-slate-500 hover:text-navy-600 transition-colors">Home</a>
+        <a href={base} class="text-slate-500 hover:text-navy-600 transition-colors">Home</a>
         <span class="text-slate-300">/</span>
-        <a href="/shop" class="text-slate-500 hover:text-navy-600 transition-colors">Shop</a>
+        <a href={`${base}shop/`} class="text-slate-500 hover:text-navy-600 transition-colors">Shop</a>
         <span class="text-slate-300">/</span>
         <span class="text-navy-900 font-medium">{product.name}</span>
       </nav>
@@ -44,7 +53,7 @@ const relatedProducts = products
           <div class="relative aspect-[4/5] bg-gradient-to-br from-mint-100 to-white overflow-hidden">
             <!-- Product Image -->
             <img
-              src={product.images[0]}
+              src={getImagePath(product.images[0])}
               alt={product.name}
               class="absolute inset-0 w-full h-full object-cover"
             />
@@ -63,7 +72,7 @@ const relatedProducts = products
           <div class="grid grid-cols-4 gap-3">
             {product.images.map((img: string, i: number) => (
               <button class={`aspect-square overflow-hidden border-2 transition-colors ${i === 0 ? 'border-navy-500' : 'border-transparent hover:border-slate-300'}`}>
-                <img src={img} alt={`${product.name} view ${i + 1}`} class="w-full h-full object-cover" />
+                <img src={getImagePath(img)} alt={`${product.name} view ${i + 1}`} class="w-full h-full object-cover" />
               </button>
             ))}
           </div>
@@ -160,14 +169,14 @@ const relatedProducts = products
 
             <!-- Add to Inquiry / Contact -->
             <div class="space-y-4 pt-4">
-              <a href="/contact" class="btn-primary w-full text-center">
+              <a href={`${base}contact/`} class="btn-primary w-full text-center">
                 Inquire About This Scent
                 <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                 </svg>
               </a>
               <p class="text-center text-sm text-slate-500">
-                Call or Text: <a href="tel:919-295-0397" class="text-navy-600 hover:underline font-medium">919-295-0397</a>
+                Call or Text: <a href="tel:347-806-3191" class="text-navy-600 hover:underline font-medium">347-806-3191</a>
               </p>
             </div>
           </div>
@@ -293,10 +302,10 @@ const relatedProducts = products
         <h2 class="font-display text-3xl font-medium text-navy-900 mb-8 text-center">You Might Also Love</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {relatedProducts.map((related) => (
-            <a href={`/shop/${related.slug}`} class="group block bg-mint-50/50 transition-all duration-500 hover:shadow-xl">
+            <a href={`${base}shop/${related.slug}/`} class="group block bg-mint-50/50 transition-all duration-500 hover:shadow-xl">
               <div class="relative aspect-[3/4] overflow-hidden bg-gradient-to-br from-mint-100 to-white">
                 <img
-                  src={related.images[0]}
+                  src={getImagePath(related.images[0])}
                   alt={related.name}
                   class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />

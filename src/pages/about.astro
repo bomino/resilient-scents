@@ -1,5 +1,7 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <MainLayout title="About" description="Meet Monique, the innovative creator behind Resilient Scents. Discover our story of empowerment, resilience, and self-love through fragrance.">
@@ -34,7 +36,7 @@ import MainLayout from '../layouts/MainLayout.astro';
         <div class="relative reveal">
           <div class="aspect-[4/5] bg-gradient-to-br from-mint-100 via-white to-navy-50 rounded-[2rem] overflow-hidden shadow-2xl shadow-navy-900/10">
             <img
-              src="/images/products-group.jpg"
+              src={`${base}images/products-group.jpg`}
               alt="Resilient Scents Products"
               class="absolute inset-0 w-full h-full object-cover"
             />
@@ -71,10 +73,10 @@ import MainLayout from '../layouts/MainLayout.astro';
           </div>
 
           <div class="mt-8 flex items-center gap-6">
-            <a href="/shop" class="btn-primary">
+            <a href={`${base}shop/`} class="btn-primary">
               Shop the Collection
             </a>
-            <a href="/contact" class="btn-ghost">
+            <a href={`${base}contact/`} class="btn-ghost">
               Get in Touch
             </a>
           </div>
@@ -196,7 +198,7 @@ import MainLayout from '../layouts/MainLayout.astro';
         <div class="order-1 lg:order-2 relative reveal">
           <div class="aspect-square bg-gradient-to-br from-mint-100 via-white to-navy-50 rounded-[2rem] overflow-hidden">
             <img
-              src="/images/products-lineup.jpg"
+              src={`${base}images/products-lineup.jpg`}
               alt="Resilient Scents Crafting Process"
               class="absolute inset-0 w-full h-full object-cover"
             />
@@ -236,7 +238,7 @@ import MainLayout from '../layouts/MainLayout.astro';
       <p class="font-body text-navy-100 text-lg mb-8 max-w-xl mx-auto">
         Discover the fragrance that speaks to your journey. Each bottle is a celebration of your strength.
       </p>
-      <a href="/shop" class="inline-flex items-center px-10 py-5 bg-white text-navy-900 font-medium tracking-wide hover:bg-mint-100 transition-colors">
+      <a href={`${base}shop/`} class="inline-flex items-center px-10 py-5 bg-white text-navy-900 font-medium tracking-wide hover:bg-mint-100 transition-colors">
         Explore the Collection
         <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />

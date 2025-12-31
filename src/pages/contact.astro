@@ -1,5 +1,7 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <MainLayout title="Contact" description="Get in touch with Resilient Scents. We'd love to hear from you about custom orders, questions, or just to say hello.">
@@ -155,8 +157,8 @@ import MainLayout from '../layouts/MainLayout.astro';
                 </div>
                 <div>
                   <h3 class="font-display text-lg font-medium text-white mb-1">Call or Text</h3>
-                  <a href="tel:919-295-0397" class="text-mint-400 hover:text-mint-300 transition-colors text-xl font-medium">
-                    919-295-0397
+                  <a href="tel:347-806-3191" class="text-mint-400 hover:text-mint-300 transition-colors text-xl font-medium">
+                    347-806-3191
                   </a>
                 </div>
               </div>
@@ -170,8 +172,8 @@ import MainLayout from '../layouts/MainLayout.astro';
                 </div>
                 <div>
                   <h3 class="font-display text-lg font-medium text-white mb-1">Email</h3>
-                  <a href="mailto:hello@resilientscents.com" class="text-slate-300 hover:text-mint-400 transition-colors">
-                    hello@resilientscents.com
+                  <a href="mailto:Resilientscent@gmail.com" class="text-slate-300 hover:text-mint-400 transition-colors">
+                    Resilientscent@gmail.com
                   </a>
                 </div>
               </div>
@@ -220,7 +222,7 @@ import MainLayout from '../layouts/MainLayout.astro';
             <div class="mt-12 p-6 bg-navy-700">
               <h3 class="font-display text-lg font-medium text-white mb-2">Looking for quick answers?</h3>
               <p class="text-slate-400 mb-4">Check out our FAQ for common questions about products, shipping, and more.</p>
-              <a href="/faq" class="inline-flex items-center text-mint-400 font-medium hover:text-mint-300 transition-colors">
+              <a href={`${base}faq/`} class="inline-flex items-center text-mint-400 font-medium hover:text-mint-300 transition-colors">
                 View FAQ
                 <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />

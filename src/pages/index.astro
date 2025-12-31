@@ -5,6 +5,7 @@ import TestimonialCard from '../components/TestimonialCard.astro';
 import products from '../data/products.json';
 import testimonials from '../data/testimonials.json';
 
+const base = import.meta.env.BASE_URL;
 const featuredProducts = products.filter(p => p.featured);
 ---
 
@@ -48,13 +49,13 @@ const featuredProducts = products.filter(p => p.featured);
 
             <!-- CTA Buttons -->
             <div class="flex flex-col sm:flex-row gap-4 animate-fade-in-up animation-delay-300">
-              <a href="/shop" class="btn-primary">
+              <a href={`${base}shop/`} class="btn-primary">
                 Explore Collection
                 <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </a>
-              <a href="/about" class="btn-secondary">
+              <a href={`${base}about/`} class="btn-secondary">
                 Our Story
               </a>
             </div>
@@ -85,7 +86,7 @@ const featuredProducts = products.filter(p => p.featured);
             <!-- Main Image Container -->
             <div class="absolute inset-0 bg-gradient-to-br from-mint-100 via-white to-navy-50 rounded-[2rem] overflow-hidden shadow-2xl shadow-navy-900/10 animate-scale-in">
               <img
-                src="/images/products-collection.jpg"
+                src={`${base}images/products-collection.jpg`}
                 alt="Resilient Scents Collection"
                 class="absolute inset-0 w-full h-full object-cover"
               />
@@ -161,7 +162,7 @@ const featuredProducts = products.filter(p => p.featured);
 
       <!-- View All CTA -->
       <div class="text-center mt-12 reveal">
-        <a href="/shop" class="btn-secondary">
+        <a href={`${base}shop/`} class="btn-secondary">
           View All Scents
           <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -236,7 +237,7 @@ const featuredProducts = products.filter(p => p.featured);
         <div class="relative reveal">
           <div class="aspect-square bg-gradient-to-br from-navy-700/50 to-navy-900 rounded-[2rem] overflow-hidden">
             <img
-              src="/images/products-lineup.jpg"
+              src={`${base}images/products-lineup.jpg`}
               alt="Resilient Scents Products"
               class="absolute inset-0 w-full h-full object-cover opacity-80"
             />

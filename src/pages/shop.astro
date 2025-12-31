@@ -2,7 +2,16 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import products from '../data/products.json';
 
+const base = import.meta.env.BASE_URL;
 const categories = ['all', 'women', 'men', 'unisex'];
+
+// Helper to fix image paths for base URL
+const getImagePath = (imagePath: string) => {
+  if (imagePath.startsWith('/')) {
+    return `${base}${imagePath.slice(1)}`;
+  }
+  return imagePath;
+};
 ---
 
 <MainLayout title="Shop" description="Explore our curated collection of premium fragrance oils and body butters. Find your signature scent and embrace your resilience.">
@@ -89,7 +98,7 @@ const categories = ['all', 'women', 'men', 'unisex'];
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8" id="products-grid">
         {products.map((product, index) => (
           <a
-            href={`/shop/${product.slug}`}
+            href={`${base}shop/${product.slug}/`}
             class="product-card group block bg-mint-50/50 transition-all duration-500 hover:shadow-2xl hover:shadow-navy-900/10"
             data-category={product.category}
             data-name={product.name.toLowerCase()}
@@ -101,7 +110,7 @@ const categories = ['all', 'women', 'men', 'unisex'];
             <div class="relative aspect-[3/4] overflow-hidden bg-gradient-to-br from-mint-100 to-white">
               <!-- Product Image -->
               <img
-                src={product.images[0]}
+                src={getImagePath(product.images[0])}
                 alt={product.name}
                 class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />

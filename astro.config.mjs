@@ -4,5 +4,6 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
   integrations: [tailwind()],
   site: 'https://bomino.github.io',
-  base: '/resilient-scents',
+  base: '/resilient-scents/',
+  trailingSlash: 'always',
 });

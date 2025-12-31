@@ -19,12 +19,21 @@ interface Props {
   index?: number;
 }
 
+const base = import.meta.env.BASE_URL;
 const { product, index = 0 } = Astro.props;
 const delay = index * 100;
+
+// Helper to fix image paths for base URL
+const getImagePath = (imagePath: string) => {
+  if (imagePath.startsWith('/')) {
+    return `${base}${imagePath.slice(1)}`;
+  }
+  return imagePath;
+};
 ---
 
 <a
-  href={`/shop/${product.slug}`}
+  href={`${base}shop/${product.slug}/`}
   class="card-product block reveal group"
   style={`animation-delay: ${delay}ms`}
 >
@@ -32,7 +41,7 @@ const delay = index * 100;
   <div class="relative aspect-[3/4] overflow-hidden bg-gradient-to-br from-mint-100 to-white">
     <!-- Product Image -->
     <img
-      src={product.images[0]}
+      src={getImagePath(product.images[0])}
       alt={product.name}
       class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
     />

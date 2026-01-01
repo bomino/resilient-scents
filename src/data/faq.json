@@ -1,62 +1,64 @@
-[
-  {
-    "id": 1,
-    "category": "Products",
-    "question": "What makes Resilient Scents body oils different?",
-    "answer": "Our body oils are crafted with premium carrier oils like jojoba, sweet almond, and argan that actually nourish your skin while delivering long-lasting fragrance. Unlike alcohol-based perfumes that evaporate quickly and can dry skin, our oils meld with your natural chemistry, creating a scent that's uniquely yours."
-  },
-  {
-    "id": 2,
-    "category": "Products",
-    "question": "How long does the scent last?",
-    "answer": "Most customers experience 6-8 hours of noticeable fragrance, with a subtle skin scent lasting even longer. Longevity depends on your skin type (oily skin holds scent longer), application areas, and environmental factors. Layering with unscented lotion can extend wear time."
-  },
-  {
-    "id": 3,
-    "category": "Products",
-    "question": "Are your products vegan and cruelty-free?",
-    "answer": "Absolutely. All Resilient Scents products are 100% vegan and never tested on animals. We're committed to ethical beauty that empowers without harm."
-  },
-  {
-    "id": 4,
-    "category": "Application",
-    "question": "Where should I apply body oil?",
-    "answer": "Focus on pulse points where blood vessels are close to the skin — wrists, neck, behind ears, inside elbows, and behind knees. These warm areas help diffuse the fragrance. You can also apply to hair ends or clothing for a softer effect."
-  },
-  {
-    "id": 5,
-    "category": "Application",
-    "question": "Can I layer different scents?",
-    "answer": "Yes! Layering is a beautiful way to create a custom scent. We recommend starting with a lighter base (like Nag Champa) and adding a richer top note (like Savage or Belle). Start small and experiment to find your perfect combination."
-  },
-  {
-    "id": 6,
-    "category": "Skin & Safety",
-    "question": "I have sensitive skin. Can I use these oils?",
-    "answer": "Our oils are formulated to be skin-friendly, but everyone is different. We always recommend doing a patch test on your inner arm 24 hours before full application. If you have known allergies to specific ingredients, please check our ingredient lists or contact us."
-  },
-  {
-    "id": 7,
-    "category": "Skin & Safety",
-    "question": "What is the shelf life?",
-    "answer": "Unopened bottles last 18-24 months. Once opened, we recommend using within 12 months for optimal freshness. Store in a cool, dark place away from direct sunlight to preserve the fragrance integrity."
-  },
-  {
-    "id": 8,
-    "category": "Shipping & Returns",
-    "question": "Where do you ship?",
-    "answer": "We currently ship throughout the United States. International shipping is coming soon! Standard shipping typically takes 3-5 business days. Express options are available at checkout."
-  },
-  {
-    "id": 9,
-    "category": "Shipping & Returns",
-    "question": "What is your return policy?",
-    "answer": "We want you to love your scent. If you're not satisfied with your purchase, reach out within 14 days of delivery. Unopened products can be returned for a full refund. For opened products, we'll work with you to find a solution — your satisfaction matters to us."
-  },
-  {
-    "id": 10,
-    "category": "Orders",
-    "question": "How do I place an order?",
-    "answer": "Browse our collection, select your desired size, and add to your inquiry. For now, orders are processed personally through our contact form or via DM on Instagram. We believe in personal connections, and this allows us to ensure every order is perfect."
-  }
-]
+{
+  "faqs": [
+    {
+      "id": 1,
+      "category": "Products",
+      "question": "What makes Resilient Scents body oils different?",
+      "answer": "Our body oils are crafted with premium carrier oils like jojoba, sweet almond, and argan that actually nourish your skin while delivering long-lasting fragrance. Unlike alcohol-based perfumes that evaporate quickly and can dry skin, our oils meld with your natural chemistry, creating a scent that's uniquely yours."
+    },
+    {
+      "id": 2,
+      "category": "Products",
+      "question": "How long does the scent last?",
+      "answer": "Most customers experience 6-8 hours of noticeable fragrance, with a subtle skin scent lasting even longer. Longevity depends on your skin type (oily skin holds scent longer), application areas, and environmental factors. Layering with unscented lotion can extend wear time."
+    },
+    {
+      "id": 3,
+      "category": "Products",
+      "question": "Are your products vegan and cruelty-free?",
+      "answer": "Absolutely. All Resilient Scents products are 100% vegan and never tested on animals. We're committed to ethical beauty that empowers without harm."
+    },
+    {
+      "id": 4,
+      "category": "Application",
+      "question": "Where should I apply body oil?",
+      "answer": "Focus on pulse points where blood vessels are close to the skin — wrists, neck, behind ears, inside elbows, and behind knees. These warm areas help diffuse the fragrance. You can also apply to hair ends or clothing for a softer effect."
+    },
+    {
+      "id": 5,
+      "category": "Application",
+      "question": "Can I layer different scents?",
+      "answer": "Yes! Layering is a beautiful way to create a custom scent. We recommend starting with a lighter base (like Nag Champa) and adding a richer top note (like Savage or Belle). Start small and experiment to find your perfect combination."
+    },
+    {
+      "id": 6,
+      "category": "Skin & Safety",
+      "question": "I have sensitive skin. Can I use these oils?",
+      "answer": "Our oils are formulated to be skin-friendly, but everyone is different. We always recommend doing a patch test on your inner arm 24 hours before full application. If you have known allergies to specific ingredients, please check our ingredient lists or contact us."
+    },
+    {
+      "id": 7,
+      "category": "Skin & Safety",
+      "question": "What is the shelf life?",
+      "answer": "Unopened bottles last 18-24 months. Once opened, we recommend using within 12 months for optimal freshness. Store in a cool, dark place away from direct sunlight to preserve the fragrance integrity."
+    },
+    {
+      "id": 8,
+      "category": "Shipping & Returns",
+      "question": "Where do you ship?",
+      "answer": "We currently ship throughout the United States. International shipping is coming soon! Standard shipping typically takes 3-5 business days. Express options are available at checkout."
+    },
+    {
+      "id": 9,
+      "category": "Shipping & Returns",
+      "question": "What is your return policy?",
+      "answer": "We want you to love your scent. If you're not satisfied with your purchase, reach out within 14 days of delivery. Unopened products can be returned for a full refund. For opened products, we'll work with you to find a solution — your satisfaction matters to us."
+    },
+    {
+      "id": 10,
+      "category": "Orders",
+      "question": "How do I place an order?",
+      "answer": "Browse our collection, select your desired size, and add to your inquiry. For now, orders are processed personally through our contact form or via DM on Instagram. We believe in personal connections, and this allows us to ensure every order is perfect."
+    }
+  ]
+}

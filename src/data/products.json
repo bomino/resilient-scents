@@ -1,197 +1,199 @@
-[
-  {
-    "id": 1,
-    "slug": "savage",
-    "name": "Savage",
-    "tagline": "Bold & Untamed",
-    "category": "men",
-    "type": "fragrance-oil",
-    "price": 25.00,
-    "currency": "USD",
-    "sizes": [
-      { "size": "1 oz", "price": 15.00 },
-      { "size": "2 oz", "price": 25.00 },
-      { "size": "4 oz", "price": 40.00 }
-    ],
-    "scent_notes": {
-      "top": ["Bergamot", "Pepper"],
-      "middle": ["Lavender", "Geranium", "Elemi"],
-      "base": ["Ambroxan", "Cedar", "Labdanum"]
+{
+  "products": [
+    {
+      "id": 1,
+      "slug": "savage",
+      "name": "Savage",
+      "tagline": "Bold & Untamed",
+      "category": "men",
+      "type": "fragrance-oil",
+      "price": 25.00,
+      "currency": "USD",
+      "sizes": [
+        { "size": "1 oz", "price": 15.00 },
+        { "size": "2 oz", "price": 25.00 },
+        { "size": "4 oz", "price": 40.00 }
+      ],
+      "scent_notes": {
+        "top": ["Bergamot", "Pepper"],
+        "middle": ["Lavender", "Geranium", "Elemi"],
+        "base": ["Ambroxan", "Cedar", "Labdanum"]
+      },
+      "vibe": "Commanding presence with a fresh, magnetic edge. For the man who moves through the world with confidence and purpose.",
+      "best_for": ["Daily wear", "Date nights", "Making an impression"],
+      "ingredients": "Premium Fragrance Oil Blend, Fractionated Coconut Oil, Vitamin E",
+      "how_to_use": "Apply to pulse points — wrists, neck, behind ears. A little goes a long way. Reapply as desired for lasting scent.",
+      "warnings": "For external use only. Patch test recommended. Avoid eye contact. Keep away from direct sunlight.",
+      "images": ["/images/products-lineup.jpg"],
+      "featured": true,
+      "badge": "Bestseller"
     },
-    "vibe": "Commanding presence with a fresh, magnetic edge. For the man who moves through the world with confidence and purpose.",
-    "best_for": ["Daily wear", "Date nights", "Making an impression"],
-    "ingredients": "Premium Fragrance Oil Blend, Fractionated Coconut Oil, Vitamin E",
-    "how_to_use": "Apply to pulse points — wrists, neck, behind ears. A little goes a long way. Reapply as desired for lasting scent.",
-    "warnings": "For external use only. Patch test recommended. Avoid eye contact. Keep away from direct sunlight.",
-    "images": ["/images/products-lineup.jpg"],
-    "featured": true,
-    "badge": "Bestseller"
-  },
-  {
-    "id": 2,
-    "slug": "tommy-b",
-    "name": "Tommy-B",
-    "tagline": "Classic Confidence",
-    "category": "men",
-    "type": "fragrance-oil",
-    "price": 25.00,
-    "currency": "USD",
-    "sizes": [
-      { "size": "1 oz", "price": 15.00 },
-      { "size": "2 oz", "price": 25.00 },
-      { "size": "4 oz", "price": 40.00 }
-    ],
-    "scent_notes": {
-      "top": ["Apple", "Mint", "Lavender"],
-      "middle": ["Cranberry", "Cinnamon", "Grapefruit"],
-      "base": ["Cedar", "Sandalwood", "Amber"]
+    {
+      "id": 2,
+      "slug": "tommy-b",
+      "name": "Tommy-B",
+      "tagline": "Classic Confidence",
+      "category": "men",
+      "type": "fragrance-oil",
+      "price": 25.00,
+      "currency": "USD",
+      "sizes": [
+        { "size": "1 oz", "price": 15.00 },
+        { "size": "2 oz", "price": 25.00 },
+        { "size": "4 oz", "price": 40.00 }
+      ],
+      "scent_notes": {
+        "top": ["Apple", "Mint", "Lavender"],
+        "middle": ["Cranberry", "Cinnamon", "Grapefruit"],
+        "base": ["Cedar", "Sandalwood", "Amber"]
+      },
+      "vibe": "Fresh and crisp with an energetic spirit. The scent of someone who's ready to take on whatever comes their way.",
+      "best_for": ["Office wear", "Casual outings", "Everyday confidence"],
+      "ingredients": "Premium Fragrance Oil Blend, Fractionated Coconut Oil, Vitamin E",
+      "how_to_use": "Apply to pulse points for best projection. Layer with unscented lotion for extended wear.",
+      "warnings": "For external use only. Patch test recommended. Avoid eye contact.",
+      "images": ["/images/products-lineup.jpg"],
+      "featured": true,
+      "badge": null
     },
-    "vibe": "Fresh and crisp with an energetic spirit. The scent of someone who's ready to take on whatever comes their way.",
-    "best_for": ["Office wear", "Casual outings", "Everyday confidence"],
-    "ingredients": "Premium Fragrance Oil Blend, Fractionated Coconut Oil, Vitamin E",
-    "how_to_use": "Apply to pulse points for best projection. Layer with unscented lotion for extended wear.",
-    "warnings": "For external use only. Patch test recommended. Avoid eye contact.",
-    "images": ["/images/products-lineup.jpg"],
-    "featured": true,
-    "badge": null
-  },
-  {
-    "id": 3,
-    "slug": "rihanna",
-    "name": "Rihanna",
-    "tagline": "Feminine Power",
-    "category": "women",
-    "type": "fragrance-oil",
-    "price": 25.00,
-    "currency": "USD",
-    "sizes": [
-      { "size": "1 oz", "price": 15.00 },
-      { "size": "2 oz", "price": 25.00 },
-      { "size": "4 oz", "price": 40.00 }
-    ],
-    "scent_notes": {
-      "top": ["Red Berries", "Mandarin", "Pink Freesia"],
-      "middle": ["Jasmine", "Tuberose", "Coconut Water"],
-      "base": ["Musk", "Vanilla", "Sandalwood"]
+    {
+      "id": 3,
+      "slug": "rihanna",
+      "name": "Rihanna",
+      "tagline": "Feminine Power",
+      "category": "women",
+      "type": "fragrance-oil",
+      "price": 25.00,
+      "currency": "USD",
+      "sizes": [
+        { "size": "1 oz", "price": 15.00 },
+        { "size": "2 oz", "price": 25.00 },
+        { "size": "4 oz", "price": 40.00 }
+      ],
+      "scent_notes": {
+        "top": ["Red Berries", "Mandarin", "Pink Freesia"],
+        "middle": ["Jasmine", "Tuberose", "Coconut Water"],
+        "base": ["Musk", "Vanilla", "Sandalwood"]
+      },
+      "vibe": "Sensual and empowering with tropical warmth. For the woman who owns every room she walks into.",
+      "best_for": ["Evening events", "Special occasions", "Self-celebration"],
+      "ingredients": "Premium Fragrance Oil Blend, Fractionated Coconut Oil, Vitamin E",
+      "how_to_use": "Glide onto clean, moisturized skin. Focus on pulse points and hair ends for all-day scent.",
+      "warnings": "For external use only. Patch test recommended. Avoid eye contact. Store in cool, dark place.",
+      "images": ["/images/products-lineup.jpg"],
+      "featured": true,
+      "badge": "Popular"
     },
-    "vibe": "Sensual and empowering with tropical warmth. For the woman who owns every room she walks into.",
-    "best_for": ["Evening events", "Special occasions", "Self-celebration"],
-    "ingredients": "Premium Fragrance Oil Blend, Fractionated Coconut Oil, Vitamin E",
-    "how_to_use": "Glide onto clean, moisturized skin. Focus on pulse points and hair ends for all-day scent.",
-    "warnings": "For external use only. Patch test recommended. Avoid eye contact. Store in cool, dark place.",
-    "images": ["/images/products-lineup.jpg"],
-    "featured": true,
-    "badge": "Popular"
-  },
-  {
-    "id": 4,
-    "slug": "one-million",
-    "name": "One Million",
-    "tagline": "Luxurious & Bold",
-    "category": "men",
-    "type": "fragrance-oil",
-    "price": 25.00,
-    "currency": "USD",
-    "sizes": [
-      { "size": "1 oz", "price": 15.00 },
-      { "size": "2 oz", "price": 25.00 },
-      { "size": "4 oz", "price": 40.00 }
-    ],
-    "scent_notes": {
-      "top": ["Blood Mandarin", "Peppermint", "Grapefruit"],
-      "middle": ["Rose", "Cinnamon", "Spices"],
-      "base": ["Leather", "Amber", "Woody Notes"]
+    {
+      "id": 4,
+      "slug": "one-million",
+      "name": "One Million",
+      "tagline": "Luxurious & Bold",
+      "category": "men",
+      "type": "fragrance-oil",
+      "price": 25.00,
+      "currency": "USD",
+      "sizes": [
+        { "size": "1 oz", "price": 15.00 },
+        { "size": "2 oz", "price": 25.00 },
+        { "size": "4 oz", "price": 40.00 }
+      ],
+      "scent_notes": {
+        "top": ["Blood Mandarin", "Peppermint", "Grapefruit"],
+        "middle": ["Rose", "Cinnamon", "Spices"],
+        "base": ["Leather", "Amber", "Woody Notes"]
+      },
+      "vibe": "Opulent and magnetic. The scent of success, ambition, and unapologetic confidence.",
+      "best_for": ["Night out", "Special events", "Power moments"],
+      "ingredients": "Premium Fragrance Oil Blend, Fractionated Coconut Oil, Vitamin E",
+      "how_to_use": "Warm between palms and press into pulse points. Perfect after a warm shower when pores are open.",
+      "warnings": "For external use only. Patch test recommended. Avoid eye contact.",
+      "images": ["/images/products-collection.jpg"],
+      "featured": true,
+      "badge": null
     },
-    "vibe": "Opulent and magnetic. The scent of success, ambition, and unapologetic confidence.",
-    "best_for": ["Night out", "Special events", "Power moments"],
-    "ingredients": "Premium Fragrance Oil Blend, Fractionated Coconut Oil, Vitamin E",
-    "how_to_use": "Warm between palms and press into pulse points. Perfect after a warm shower when pores are open.",
-    "warnings": "For external use only. Patch test recommended. Avoid eye contact.",
-    "images": ["/images/products-collection.jpg"],
-    "featured": true,
-    "badge": null
-  },
-  {
-    "id": 5,
-    "slug": "nag-champa",
-    "name": "Nag Champa",
-    "tagline": "Sacred & Grounding",
-    "category": "unisex",
-    "type": "fragrance-oil",
-    "price": 25.00,
-    "currency": "USD",
-    "sizes": [
-      { "size": "1 oz", "price": 15.00 },
-      { "size": "2 oz", "price": 25.00 },
-      { "size": "4 oz", "price": 40.00 }
-    ],
-    "scent_notes": {
-      "top": ["Champa Flower", "Magnolia"],
-      "middle": ["Sandalwood", "Halmaddi"],
-      "base": ["Vanilla", "Amber", "Musk"]
+    {
+      "id": 5,
+      "slug": "nag-champa",
+      "name": "Nag Champa",
+      "tagline": "Sacred & Grounding",
+      "category": "unisex",
+      "type": "fragrance-oil",
+      "price": 25.00,
+      "currency": "USD",
+      "sizes": [
+        { "size": "1 oz", "price": 15.00 },
+        { "size": "2 oz", "price": 25.00 },
+        { "size": "4 oz", "price": 40.00 }
+      ],
+      "scent_notes": {
+        "top": ["Champa Flower", "Magnolia"],
+        "middle": ["Sandalwood", "Halmaddi"],
+        "base": ["Vanilla", "Amber", "Musk"]
+      },
+      "vibe": "Spiritual and meditative with warm, earthy depth. For moments of reflection, peace, and inner strength.",
+      "best_for": ["Meditation", "Relaxation", "Spiritual practice"],
+      "ingredients": "Premium Fragrance Oil Blend, Fractionated Coconut Oil, Vitamin E",
+      "how_to_use": "Apply to pulse points or use as a massage oil. Perfect for unwinding and centering yourself.",
+      "warnings": "For external use only. Patch test recommended. Avoid eye contact.",
+      "images": ["/images/products-collection.jpg"],
+      "featured": false,
+      "badge": null
     },
-    "vibe": "Spiritual and meditative with warm, earthy depth. For moments of reflection, peace, and inner strength.",
-    "best_for": ["Meditation", "Relaxation", "Spiritual practice"],
-    "ingredients": "Premium Fragrance Oil Blend, Fractionated Coconut Oil, Vitamin E",
-    "how_to_use": "Apply to pulse points or use as a massage oil. Perfect for unwinding and centering yourself.",
-    "warnings": "For external use only. Patch test recommended. Avoid eye contact.",
-    "images": ["/images/products-collection.jpg"],
-    "featured": false,
-    "badge": null
-  },
-  {
-    "id": 6,
-    "slug": "belle",
-    "name": "Belle",
-    "tagline": "Elegant & Timeless",
-    "category": "women",
-    "type": "fragrance-oil",
-    "price": 30.00,
-    "currency": "USD",
-    "sizes": [
-      { "size": "1 oz", "price": 18.00 },
-      { "size": "2 oz", "price": 30.00 },
-      { "size": "4 oz", "price": 48.00 }
-    ],
-    "scent_notes": {
-      "top": ["Lychee", "Pink Pepper", "Pear"],
-      "middle": ["Rose", "Jasmine", "Orange Blossom"],
-      "base": ["Patchouli", "Vanilla", "Cedar"]
+    {
+      "id": 6,
+      "slug": "belle",
+      "name": "Belle",
+      "tagline": "Elegant & Timeless",
+      "category": "women",
+      "type": "fragrance-oil",
+      "price": 30.00,
+      "currency": "USD",
+      "sizes": [
+        { "size": "1 oz", "price": 18.00 },
+        { "size": "2 oz", "price": 30.00 },
+        { "size": "4 oz", "price": 48.00 }
+      ],
+      "scent_notes": {
+        "top": ["Lychee", "Pink Pepper", "Pear"],
+        "middle": ["Rose", "Jasmine", "Orange Blossom"],
+        "base": ["Patchouli", "Vanilla", "Cedar"]
+      },
+      "vibe": "Graceful and sophisticated with romantic florals. For the woman who radiates beauty inside and out.",
+      "best_for": ["Romantic evenings", "Special occasions", "Everyday elegance"],
+      "ingredients": "Premium Fragrance Oil Blend, Fractionated Coconut Oil, Vitamin E",
+      "how_to_use": "Apply sparingly to pulse points. This elegant scent builds beautifully throughout the day.",
+      "warnings": "For external use only. Patch test recommended. Avoid eye contact. Store away from heat.",
+      "images": ["/images/belle-oil.jpg"],
+      "featured": true,
+      "badge": "New"
     },
-    "vibe": "Graceful and sophisticated with romantic florals. For the woman who radiates beauty inside and out.",
-    "best_for": ["Romantic evenings", "Special occasions", "Everyday elegance"],
-    "ingredients": "Premium Fragrance Oil Blend, Fractionated Coconut Oil, Vitamin E",
-    "how_to_use": "Apply sparingly to pulse points. This elegant scent builds beautifully throughout the day.",
-    "warnings": "For external use only. Patch test recommended. Avoid eye contact. Store away from heat.",
-    "images": ["/images/belle-oil.jpg"],
-    "featured": true,
-    "badge": "New"
-  },
-  {
-    "id": 7,
-    "slug": "unscented-body-butter",
-    "name": "Unscented Body Butter",
-    "tagline": "Pure Nourishment",
-    "category": "unisex",
-    "type": "body-butter",
-    "price": 20.00,
-    "currency": "USD",
-    "sizes": [
-      { "size": "4 oz", "price": 20.00 },
-      { "size": "8 oz", "price": 35.00 }
-    ],
-    "scent_notes": {
-      "top": [],
-      "middle": [],
-      "base": []
-    },
-    "vibe": "Rich, luxurious moisture without added fragrance. Perfect for sensitive skin or layering with your favorite fragrance oil.",
-    "best_for": ["Daily moisturizing", "Sensitive skin", "Layering base"],
-    "ingredients": "Shea Butter, Cocoa Butter, Coconut Oil, Vitamin E",
-    "how_to_use": "Apply generously to dry skin after bathing. Focus on rough areas like elbows, knees, and heels.",
-    "warnings": "For external use only. Patch test recommended if you have sensitive skin.",
-    "images": ["/images/products-group.jpg"],
-    "featured": true,
-    "badge": "Essential"
-  }
-]
+    {
+      "id": 7,
+      "slug": "unscented-body-butter",
+      "name": "Unscented Body Butter",
+      "tagline": "Pure Nourishment",
+      "category": "unisex",
+      "type": "body-butter",
+      "price": 20.00,
+      "currency": "USD",
+      "sizes": [
+        { "size": "4 oz", "price": 20.00 },
+        { "size": "8 oz", "price": 35.00 }
+      ],
+      "scent_notes": {
+        "top": [],
+        "middle": [],
+        "base": []
+      },
+      "vibe": "Rich, luxurious moisture without added fragrance. Perfect for sensitive skin or layering with your favorite fragrance oil.",
+      "best_for": ["Daily moisturizing", "Sensitive skin", "Layering base"],
+      "ingredients": "Shea Butter, Cocoa Butter, Coconut Oil, Vitamin E",
+      "how_to_use": "Apply generously to dry skin after bathing. Focus on rough areas like elbows, knees, and heels.",
+      "warnings": "For external use only. Patch test recommended if you have sensitive skin.",
+      "images": ["/images/products-group.jpg"],
+      "featured": true,
+      "badge": "Essential"
+    }
+  ]
+}

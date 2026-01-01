@@ -1,42 +1,44 @@
-[
-  {
-    "id": 1,
-    "name": "Jasmine T.",
-    "location": "Atlanta, GA",
-    "product": "Tommy-B",
-    "text": "I've never had so many compliments on how I smell. Tommy-B is literally bottled confidence. I wear it to every important meeting now.",
-    "rating": 5
-  },
-  {
-    "id": 2,
-    "name": "Marcus D.",
-    "location": "Chicago, IL",
-    "product": "Savage",
-    "text": "This isn't just a scent — it's an experience. Deep, sophisticated, unforgettable. My signature now.",
-    "rating": 5
-  },
-  {
-    "id": 3,
-    "name": "Aaliyah R.",
-    "location": "Houston, TX",
-    "product": "Belle",
-    "text": "The way this oil melts into my skin and lasts ALL DAY. I feel beautiful every time I wear it. Monique really understood the assignment.",
-    "rating": 5
-  },
-  {
-    "id": 4,
-    "name": "David K.",
-    "location": "Brooklyn, NY",
-    "product": "Nag Champa",
-    "text": "Finally, a body oil that isn't overwhelming. Fresh, clean, but still makes a statement. Perfect for everyday.",
-    "rating": 5
-  },
-  {
-    "id": 5,
-    "name": "Keisha M.",
-    "location": "Los Angeles, CA",
-    "product": "Rihanna",
-    "text": "I bought this for a special event and now I can't stop wearing it. The floral and woody combination is EVERYTHING.",
-    "rating": 5
-  }
-]
+{
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Jasmine T.",
+      "location": "Atlanta, GA",
+      "product": "Tommy-B",
+      "text": "I've never had so many compliments on how I smell. Tommy-B is literally bottled confidence. I wear it to every important meeting now.",
+      "rating": 5
+    },
+    {
+      "id": 2,
+      "name": "Marcus D.",
+      "location": "Chicago, IL",
+      "product": "Savage",
+      "text": "This isn't just a scent — it's an experience. Deep, sophisticated, unforgettable. My signature now.",
+      "rating": 5
+    },
+    {
+      "id": 3,
+      "name": "Aaliyah R.",
+      "location": "Houston, TX",
+      "product": "Belle",
+      "text": "The way this oil melts into my skin and lasts ALL DAY. I feel beautiful every time I wear it. Monique really understood the assignment.",
+      "rating": 5
+    },
+    {
+      "id": 4,
+      "name": "David K.",
+      "location": "Brooklyn, NY",
+      "product": "Nag Champa",
+      "text": "Finally, a body oil that isn't overwhelming. Fresh, clean, but still makes a statement. Perfect for everyday.",
+      "rating": 5
+    },
+    {
+      "id": 5,
+      "name": "Keisha M.",
+      "location": "Los Angeles, CA",
+      "product": "Rihanna",
+      "text": "I bought this for a special event and now I can't stop wearing it. The floral and woody combination is EVERYTHING.",
+      "rating": 5
+    }
+  ]
+}

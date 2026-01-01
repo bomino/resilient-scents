@@ -29,3 +29,7 @@ yarn-error.log*
 
 # Local settings
 .claude/settings.local.json
+
+# Tina CMS
+tina/__generated__/
+tina/tina-lock.json

@@ -1,4 +1,6 @@
-import products from '../data/products.json';
+import productsData from '../data/products.json';
+
+const products = productsData.products as Product[];
 
 export interface Product {
   id: number;
@@ -86,7 +88,7 @@ export function getFeaturedProducts(productList: Product[]): Product[] {
  * Get product by slug
  */
 export function getProductBySlug(slug: string): Product | undefined {
-  return (products as Product[]).find((product) => product.slug === slug);
+  return products.find((product) => product.slug === slug);
 }
 
 /**
@@ -96,7 +98,7 @@ export function getRelatedProducts(
   currentProduct: Product,
   limit: number = 3
 ): Product[] {
-  return (products as Product[])
+  return products
     .filter(
       (product) =>
         product.category === currentProduct.category &&

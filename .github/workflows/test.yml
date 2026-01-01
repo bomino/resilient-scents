@@ -1,0 +1,103 @@
+name: Test and Build
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+    branches: [master, main]
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: Run Tests and Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run unit tests
+        run: npm test -- --run
+
+      - name: Check TypeScript
+        run: npx tsc --noEmit
+
+      - name: Build project
+        run: npm run build
+
+      - name: Check build output
+        run: |
+          if [ ! -d "dist" ]; then
+            echo "Build failed: dist directory not found"
+            exit 1
+          fi
+          echo "Build successful: dist directory created"
+          ls -la dist/
+
+  lint:
+    name: Code Quality Checks
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check formatting with Prettier
+        run: npx prettier --check "src/**/*.{js,ts,tsx,astro,css,json}"
+        continue-on-error: true
+
+      - name: Validate JSON files
+        run: |
+          echo "Validating products.json..."
+          npx jsonlint src/data/products.json -q
+          echo "Validating testimonials.json..."
+          npx jsonlint src/data/testimonials.json -q
+          echo "Validating faq.json..."
+          npx jsonlint src/data/faq.json -q
+        continue-on-error: true
+
+  accessibility:
+    name: Accessibility Checks
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run build
+
+      - name: Run accessibility audit
+        run: |
+          npx serve dist -l 3000 &
+          sleep 5
+          npx axe-core-cli http://localhost:3000/resilient-scents/ --exit
+        continue-on-error: true

@@ -1,0 +1,29 @@
+# CODEOWNERS file for automatic review assignment
+
+# Global owners - will be requested for review on all changes
+* @bomino
+
+# Frontend components
+/src/components/ @bomino
+/src/pages/ @bomino
+/src/layouts/ @bomino
+
+# Data and configuration
+/src/data/ @bomino
+*.json @bomino
+
+# Styling
+/src/styles/ @bomino
+*.css @bomino
+tailwind.config.* @bomino
+
+# Testing
+*.test.* @bomino
+/vitest.config.* @bomino
+
+# CI/CD and GitHub configuration
+/.github/ @bomino
+
+# Documentation
+*.md @bomino
+CLAUDE.md @bomino

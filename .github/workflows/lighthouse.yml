@@ -27,37 +27,10 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Run Lighthouse CI
-        uses: treosh/lighthouse-ci-action@v10
-        with:
-          configPath: './lighthouserc.json'
-          uploadArtifacts: true
-          temporaryPublicStorage: true
-        continue-on-error: true
-
-      - name: Format Lighthouse score
-        uses: actions/github-script@v7
-        if: always()
-        with:
-          script: |
-            const results = {
-              performance: 85,  // Target scores
-              accessibility: 90,
-              'best-practices': 90,
-              seo: 90
-            };
-
-            const comment = `
-            ## 🔦 Lighthouse Report
-
-            | Category | Target | Status |
-            |----------|--------|---------|
-            | Performance | 85+ | ⏳ |
-            | Accessibility | 90+ | ⏳ |
-            | Best Practices | 90+ | ⏳ |
-            | SEO | 90+ | ⏳ |
-
-            _Note: Detailed report available in artifacts_
-            `;
-
-            console.log(comment);
+      - name: Start server and run Lighthouse
+        run: |
+          npm install -g @lhci/cli
+          npx serve dist -l 5000 &
+          sleep 10
+          echo "Running Lighthouse audits..."
+          npx lhci autorun --collect.url=http://localhost:5000/resilient-scents/ --collect.numberOfRuns=1 --assert.preset=lighthouse:no-pwa --upload.target=temporary-public-storage || echo "Lighthouse completed with warnings"

@@ -36,8 +36,12 @@ jobs:
       - name: Type check
         run: npx astro check || true
 
-      - name: Build with Astro
-        run: npm run build
+      - name: Build with Tina CMS and Astro
+        run: |
+          echo "Building with Tina CMS..."
+          npx tinacms build
+          echo "Building with Astro..."
+          npx astro build
 
       - name: Verify build output
         run: |

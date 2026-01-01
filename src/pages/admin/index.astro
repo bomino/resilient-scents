@@ -1,0 +1,26 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+---
+
+<MainLayout
+  title="Admin - Resilient Scents"
+  description="Content Management System for Resilient Scents"
+>
+  <div class="min-h-screen">
+    <!-- Tina CMS will inject its interface here -->
+    <div id="tina-admin"></div>
+
+    <!-- Fallback content for non-authenticated users -->
+    <noscript>
+      <div class="container mx-auto px-4 py-16 text-center">
+        <h1 class="text-3xl font-bold mb-4">JavaScript Required</h1>
+        <p>Please enable JavaScript to use the content management system.</p>
+      </div>
+    </noscript>
+  </div>
+
+  <script>
+    // Tina CMS will automatically handle the admin interface
+    // when accessed at /admin
+  </script>
+</MainLayout>

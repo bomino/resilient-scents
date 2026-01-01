@@ -94,18 +94,21 @@ Visit `http://localhost:4321/resilient-scents/` to view the site locally.
 ## 📦 Available Scripts
 
 ```bash
-npm run dev          # Start development server
-npm run build        # Build for production
+npm run dev          # Start development server with Tina CMS
+npm run build        # Build for production with Tina
 npm run preview      # Preview production build
 npm test             # Run tests in watch mode
 npm test -- --run    # Run tests once
 npm run test:ui      # Run tests with UI
 npm run test:coverage # Generate coverage report
+npm run tina:admin   # Run Tina CMS standalone
+npm run tina:build   # Build Tina schema
 ```
 
 ## 🏗️ Tech Stack
 
 - **Framework**: [Astro](https://astro.build/) 5.x - Static Site Generator
+- **CMS**: [Tina CMS](https://tina.io/) - Git-based content management
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/) 3.x with custom design system
 - **Testing**: [Vitest](https://vitest.dev/) with jsdom
 - **Language**: TypeScript
@@ -198,6 +201,22 @@ Target metrics (monitored by Lighthouse CI):
 - **Accessibility**: 90+
 - **Best Practices**: 90+
 - **SEO**: 90+
+
+## 📝 Content Management
+
+The site uses **Tina CMS** for easy content management without technical knowledge.
+
+### For Non-Technical Users
+See the [CMS_GUIDE.md](CMS_GUIDE.md) for detailed instructions on managing products, testimonials, and FAQs.
+
+### Accessing the CMS
+1. **Local Development**: Run `npm run dev` and visit `/admin`
+2. **Production**: Configure Tina Cloud at [tina.io](https://tina.io)
+
+### Content Types
+- **Products**: Full product catalog with variants and pricing
+- **Testimonials**: Customer reviews and ratings
+- **FAQs**: Frequently asked questions by category
 
 ## 🔧 Configuration
 

@@ -31,8 +31,12 @@ jobs:
       - name: Check TypeScript
         run: npx astro check || echo "TypeScript check completed with warnings"
 
-      - name: Build project
-        run: npm run build
+      - name: Build project with Tina CMS
+        run: |
+          echo "Building with Tina CMS..."
+          npx tinacms build
+          echo "Building with Astro..."
+          npx astro build
 
       - name: Check build output
         run: |

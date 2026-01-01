@@ -1,0 +1,57 @@
+fragment ProductsParts on Products {
+  __typename
+  products {
+    __typename
+    id
+    slug
+    name
+    tagline
+    category
+    type
+    price
+    currency
+    sizes {
+      __typename
+      size
+      price
+    }
+    scent_notes {
+      __typename
+      top
+      middle
+      base
+    }
+    vibe
+    best_for
+    ingredients
+    how_to_use
+    warnings
+    images
+    featured
+    badge
+  }
+}
+
+fragment TestimonialsParts on Testimonials {
+  __typename
+  testimonials {
+    __typename
+    id
+    name
+    location
+    product
+    text
+    rating
+  }
+}
+
+fragment FaqParts on Faq {
+  __typename
+  faqs {
+    __typename
+    id
+    category
+    question
+    answer
+  }
+}

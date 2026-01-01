@@ -6,6 +6,7 @@ export interface Product {
   name: string;
   tagline: string;
   category: 'women' | 'men' | 'unisex';
+  type: 'fragrance-oil' | 'body-butter';
   price: number;
   currency: string;
   sizes: { size: string; price: number }[];

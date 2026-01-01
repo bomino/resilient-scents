@@ -31,7 +31,7 @@ npm run test:coverage # Run with coverage report
 
 ## Project Structure
 
-```
+```plaintext
 src/
 ├── pages/                    # Route pages (.astro files)
 │   ├── index.astro           # Home page with hero, featured products, testimonials
@@ -64,6 +64,7 @@ public/
 ## Data Model
 
 Products in `src/data/products.json`:
+
 ```json
 {
   "id": 1,
@@ -95,12 +96,23 @@ Products in `src/data/products.json`:
 
 ## Custom Tailwind Colors
 
-The design uses a warm earth-tone palette defined in `tailwind.config.mjs`:
-- `terracotta`: Primary brand color (warm orange-red)
-- `amber`: Accent color (golden)
-- `clay`: Neutral browns
-- `sage`: Muted green accents
-- `cream`: Light backgrounds
+The design uses a fresh, natural palette defined in `tailwind.config.mjs`:
+
+- `brand-green`: Primary brand color (#A3E699) with light/dark variants
+- `brand-blue`: Secondary color (#1A5698) with light/dark variants
+- `mint`: Extended green palette (50-950 shades)
+- `navy`: Extended blue palette (50-950 shades)
+- `slate`: Neutral gray tones
+- `cream`: Off-white backgrounds (50-500 shades)
+
+## TypeScript Configuration
+
+Path aliases are configured in `tsconfig.json` for cleaner imports:
+
+- `@/*` → `src/*`
+- `@components/*` → `src/components/*`
+- `@layouts/*` → `src/layouts/*`
+- `@data/*` → `src/data/*`
 
 ## Key Features
 
@@ -114,6 +126,7 @@ The design uses a warm earth-tone palette defined in `tailwind.config.mjs`:
 ## Testing
 
 Unit tests in `src/utils/products.test.ts` cover:
+
 - `filterProducts()` - category filtering
 - `searchProducts()` - name search
 - `sortProducts()` - various sort options
@@ -130,14 +143,15 @@ Run tests: `npm test -- --run`
 
 ## Deployment (GitHub Pages)
 
-1. Update `astro.config.mjs` with your GitHub username and repo name
-2. Run `npm run build`
-3. Push `dist/` contents to `gh-pages` branch
-4. Enable Pages in GitHub repo settings
+The project is configured for GitHub Pages deployment at `https://bomino.github.io/resilient-scents/`:
+
+1. Run `npm run build` to generate static files in `dist/`
+2. Deploy the `dist/` folder to GitHub Pages (via gh-pages branch or GitHub Actions)
+3. The base path `/resilient-scents/` is already configured in `astro.config.mjs`
 
 ## Design Notes
 
 - **Typography**: Playfair Display (display), DM Sans (body), Cormorant Garamond (accent)
-- **Aesthetic**: Editorial/luxury magazine feel with organic blob shapes and warm gradients
-- **Animations**: Scroll-triggered reveals, floating elements, smooth transitions
+- **Aesthetic**: Editorial/luxury magazine feel with organic blob shapes and gradients
+- **Custom Animations**: `float`, `float-delayed`, `fade-in`, `fade-in-up`, `slide-in-left`, `slide-in-right`, `scale-in`, `blob`
 - **Forms**: Formspree integration (update endpoint in contact.astro)

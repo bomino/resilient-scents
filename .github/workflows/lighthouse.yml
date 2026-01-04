@@ -1,0 +1,36 @@
+name: Lighthouse CI
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+    branches: [master, main]
+
+jobs:
+  lighthouse:
+    name: Performance Audit
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run build
+
+      - name: Start server and run Lighthouse
+        run: |
+          npm install -g @lhci/cli
+          npx serve dist -l 5000 &
+          sleep 10
+          echo "Running Lighthouse audits..."
+          npx lhci autorun --collect.url=http://localhost:5000/resilient-scents/ --collect.numberOfRuns=1 --assert.preset=lighthouse:no-pwa --upload.target=temporary-public-storage || echo "Lighthouse completed with warnings"

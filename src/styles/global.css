@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-body text-slate-900 bg-white antialiased;
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+
+  ::selection {
+    @apply bg-mint-200 text-navy-900;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-100;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-mint-400 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-mint-500;
+  }
+}
+
+@layer components {
+  /* Animated underline for links */
+  .link-underline {
+    @apply relative inline-block;
+  }
+
+  .link-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-[1px] bg-navy-600 transition-all duration-300;
+  }
+
+  .link-underline:hover::after {
+    @apply w-full;
+  }
+
+  /* Button styles - Brand Green/Blue */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-4 bg-navy-600 text-white font-medium tracking-wide rounded-none transition-all duration-300 hover:bg-navy-800 hover:shadow-lg hover:shadow-navy-600/20 active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-8 py-4 border-2 border-navy-600 text-navy-600 font-medium tracking-wide rounded-none transition-all duration-300 hover:bg-navy-600 hover:text-white active:scale-[0.98];
+  }
+
+  .btn-green {
+    @apply inline-flex items-center justify-center px-8 py-4 bg-mint-300 text-navy-800 font-medium tracking-wide rounded-none transition-all duration-300 hover:bg-mint-400 hover:shadow-lg active:scale-[0.98];
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center px-6 py-3 text-slate-700 font-medium tracking-wide transition-all duration-300 hover:text-navy-600;
+  }
+
+  /* Card styles */
+  .card-product {
+    @apply relative overflow-hidden bg-white border border-slate-200 transition-all duration-500;
+  }
+
+  .card-product:hover {
+    @apply shadow-2xl shadow-slate-900/10 border-mint-300;
+  }
+
+  /* Input styles */
+  .input-field {
+    @apply w-full px-4 py-3 bg-white border border-slate-200 text-slate-900 placeholder-slate-400 transition-all duration-300 focus:outline-none focus:border-navy-600 focus:ring-2 focus:ring-navy-600/20;
+  }
+
+  /* Section divider */
+  .section-divider {
+    @apply h-px bg-gradient-to-r from-transparent via-mint-300 to-transparent;
+  }
+
+  /* Organic blob shapes */
+  .blob {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+
+  .blob-2 {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+
+  /* Text gradient - Brand colors */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-navy-600 via-mint-500 to-navy-600;
+  }
+
+  /* Brand background */
+  .bg-brand {
+    background-color: #A3E699;
+  }
+
+  .text-brand-blue {
+    color: #1A5698;
+  }
+
+  /* Noise overlay */
+  .noise-overlay {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  }
+}
+
+@layer utilities {
+  /* Animation delays */
+  .animation-delay-100 { animation-delay: 100ms; }
+  .animation-delay-200 { animation-delay: 200ms; }
+  .animation-delay-300 { animation-delay: 300ms; }
+  .animation-delay-400 { animation-delay: 400ms; }
+  .animation-delay-500 { animation-delay: 500ms; }
+  .animation-delay-600 { animation-delay: 600ms; }
+  .animation-delay-700 { animation-delay: 700ms; }
+  .animation-delay-800 { animation-delay: 800ms; }
+
+  /* Reveal animations */
+  .reveal {
+    @apply opacity-0 translate-y-8;
+  }
+
+  .reveal.active {
+    @apply opacity-100 translate-y-0 transition-all duration-700 ease-out;
+  }
+
+  /* Stagger children */
+  .stagger-children > * {
+    @apply opacity-0 translate-y-4;
+  }
+
+  .stagger-children.active > * {
+    @apply opacity-100 translate-y-0 transition-all duration-500;
+  }
+
+  .stagger-children.active > *:nth-child(1) { transition-delay: 100ms; }
+  .stagger-children.active > *:nth-child(2) { transition-delay: 200ms; }
+  .stagger-children.active > *:nth-child(3) { transition-delay: 300ms; }
+  .stagger-children.active > *:nth-child(4) { transition-delay: 400ms; }
+  .stagger-children.active > *:nth-child(5) { transition-delay: 500ms; }
+  .stagger-children.active > *:nth-child(6) { transition-delay: 600ms; }
+}

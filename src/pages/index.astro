@@ -1,0 +1,342 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import TestimonialCard from '../components/TestimonialCard.astro';
+import { getCollection } from 'astro:content';
+
+const base = import.meta.env.BASE_URL;
+
+const productsCollection = await getCollection('products');
+const products = productsCollection.map(entry => ({
+  ...entry.data,
+  vibe: entry.body,
+}));
+
+const testimonialsCollection = await getCollection('testimonials');
+const testimonials = testimonialsCollection.map(entry => ({
+  ...entry.data,
+  text: entry.body,
+}));
+
+const featuredProducts = products.filter(p => p.featured);
+---
+
+<MainLayout title="Home" description="Resilient Scents — Empowerment in every drop. Premium fragrance oils and body butters crafted to celebrate your strength, confidence, and self-love.">
+
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center overflow-hidden pt-20">
+    <!-- Background Elements -->
+    <div class="absolute inset-0 bg-gradient-to-br from-white via-mint-100/30 to-navy-50/20"></div>
+
+    <!-- Organic Blob Shapes -->
+    <div class="absolute top-20 right-0 w-[600px] h-[600px] bg-gradient-to-br from-mint-200/40 to-mint-300/30 blob animate-blob opacity-60 blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-navy-100/30 to-mint-200/20 blob-2 animate-blob animation-delay-400 opacity-50 blur-3xl"></div>
+
+    <!-- Floating Elements -->
+    <div class="absolute top-1/4 right-1/4 w-3 h-3 bg-mint-400 rounded-full animate-float opacity-60"></div>
+    <div class="absolute bottom-1/3 left-1/3 w-2 h-2 bg-navy-400 rounded-full animate-float-delayed opacity-50"></div>
+    <div class="absolute top-1/2 right-1/3 w-4 h-4 bg-mint-300 rounded-full animate-float animation-delay-200 opacity-40"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-8 py-20 lg:py-32">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <!-- Hero Content -->
+        <div class="order-2 lg:order-1">
+          <div class="space-y-6 lg:space-y-8">
+            <!-- Eyebrow -->
+            <div class="inline-flex items-center gap-2 px-4 py-2 bg-mint-100/80 backdrop-blur-sm border border-mint-200 animate-fade-in">
+              <span class="w-2 h-2 bg-mint-500 rounded-full animate-pulse"></span>
+              <span class="text-xs font-medium tracking-widest uppercase text-navy-600">Empowerment in Every Drop</span>
+            </div>
+
+            <!-- Headline -->
+            <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl font-medium text-navy-900 leading-[1.1] animate-fade-in-up animation-delay-100">
+              Elevate Your
+              <span class="block text-gradient">Essence</span>
+            </h1>
+
+            <!-- Subheadline -->
+            <p class="font-body text-lg lg:text-xl text-slate-600 max-w-lg leading-relaxed animate-fade-in-up animation-delay-200">
+              Curated fragrance oils and body butters that celebrate your strength. Each scent is a carefully crafted blend embodying confidence, resilience, and a commitment to self-love.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 animate-fade-in-up animation-delay-300">
+              <a href={`${base}shop/`} class="btn-primary">
+                Explore Collection
+                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+              <a href={`${base}about/`} class="btn-secondary">
+                Our Story
+              </a>
+            </div>
+
+            <!-- Trust Badges -->
+            <div class="flex items-center gap-8 pt-4 animate-fade-in animation-delay-500">
+              <div class="text-center">
+                <span class="block font-display text-2xl font-semibold text-navy-600">100%</span>
+                <span class="text-xs text-slate-500 uppercase tracking-wide">Vegan</span>
+              </div>
+              <div class="w-px h-10 bg-slate-200"></div>
+              <div class="text-center">
+                <span class="block font-display text-2xl font-semibold text-navy-600">7+</span>
+                <span class="text-xs text-slate-500 uppercase tracking-wide">Unique Scents</span>
+              </div>
+              <div class="w-px h-10 bg-slate-200"></div>
+              <div class="text-center">
+                <span class="block font-display text-2xl font-semibold text-navy-600">8hr</span>
+                <span class="text-xs text-slate-500 uppercase tracking-wide">Lasting</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual -->
+        <div class="order-1 lg:order-2 relative">
+          <div class="relative aspect-[4/5] max-w-md mx-auto lg:max-w-none">
+            <!-- Main Image Container -->
+            <div class="absolute inset-0 bg-gradient-to-br from-mint-100 via-white to-navy-50 rounded-[2rem] overflow-hidden shadow-2xl shadow-navy-900/10 animate-scale-in">
+              <img
+                src={`${base}images/products-collection.jpg`}
+                alt="Resilient Scents Collection"
+                class="absolute inset-0 w-full h-full object-cover"
+              />
+            </div>
+
+            <!-- Floating Card -->
+            <div class="absolute -bottom-6 -left-6 lg:-left-12 p-4 bg-white shadow-xl shadow-navy-900/10 animate-slide-in-left animation-delay-400">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 bg-gradient-to-br from-mint-200 to-mint-400 rounded-full flex items-center justify-center">
+                  <svg class="w-6 h-6 text-navy-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-display text-sm font-medium text-navy-900">Cruelty Free</p>
+                  <p class="text-xs text-slate-500">Ethically crafted</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Rating Badge -->
+            <div class="absolute -top-4 -right-4 lg:top-8 lg:-right-8 p-4 bg-navy-800 text-white shadow-xl animate-slide-in-right animation-delay-500">
+              <div class="text-center">
+                <div class="flex justify-center gap-0.5 mb-1">
+                  {[1,2,3,4,5].map(() => (
+                    <svg class="w-3 h-3 text-mint-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                    </svg>
+                  ))}
+                </div>
+                <p class="font-display text-lg font-semibold">4.9</p>
+                <p class="text-xs text-slate-400">500+ Reviews</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <a href="#featured" class="flex flex-col items-center gap-2 text-slate-400 hover:text-navy-600 transition-colors">
+        <span class="text-xs uppercase tracking-widest">Discover</span>
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Featured Products Section -->
+  <section id="featured" class="py-24 lg:py-32 bg-white relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+        <span class="inline-block px-4 py-1 bg-mint-100 text-navy-700 text-xs font-medium tracking-widest uppercase mb-4">
+          The Collection
+        </span>
+        <h2 class="font-display text-4xl lg:text-5xl font-medium text-navy-900 mb-4">
+          Featured Scents
+        </h2>
+        <p class="font-body text-slate-600 leading-relaxed">
+          Each fragrance tells a story of strength and self-discovery. Find the scent that speaks to your journey.
+        </p>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 stagger-children">
+        {featuredProducts.map((product, index) => (
+          <ProductCard product={product} index={index} />
+        ))}
+      </div>
+
+      <!-- View All CTA -->
+      <div class="text-center mt-12 reveal">
+        <a href={`${base}shop/`} class="btn-secondary">
+          View All Scents
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Section -->
+  <section class="py-24 lg:py-32 bg-navy-800 text-white relative overflow-hidden">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute inset-0" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <!-- Content -->
+        <div class="reveal">
+          <span class="inline-block px-4 py-1 bg-mint-500/20 text-mint-300 text-xs font-medium tracking-widest uppercase mb-6">
+            Why Resilient Scents
+          </span>
+          <h2 class="font-display text-4xl lg:text-5xl font-medium mb-6 leading-tight">
+            More Than a Fragrance,<br />
+            <span class="text-mint-400">A Statement</span>
+          </h2>
+          <p class="font-body text-slate-300 text-lg leading-relaxed mb-8">
+            Every bottle holds more than scent — it holds intention. Our oils are crafted for those who understand that self-care is an act of resilience, and that how you show up for yourself matters.
+          </p>
+
+          <div class="space-y-6">
+            <div class="flex gap-4 items-start">
+              <div class="flex-shrink-0 w-12 h-12 bg-mint-500/20 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-mint-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-display text-xl font-medium text-white mb-1">Premium Ingredients</h3>
+                <p class="text-slate-400">Carrier oils that nourish while fragrance oils enchant. No harsh alcohols, no synthetics — just pure indulgence.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4 items-start">
+              <div class="flex-shrink-0 w-12 h-12 bg-mint-500/20 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-mint-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-display text-xl font-medium text-white mb-1">All-Day Presence</h3>
+                <p class="text-slate-400">6-8 hours of wear that evolves with your skin chemistry. Your scent becomes uniquely yours.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4 items-start">
+              <div class="flex-shrink-0 w-12 h-12 bg-mint-500/20 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-mint-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-display text-xl font-medium text-white mb-1">Crafted with Purpose</h3>
+                <p class="text-slate-400">Each blend is designed to evoke a feeling, a mood, a moment of empowerment. Scent with intention.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual -->
+        <div class="relative reveal">
+          <div class="aspect-square bg-gradient-to-br from-navy-700/50 to-navy-900 rounded-[2rem] overflow-hidden">
+            <img
+              src={`${base}images/products-lineup.jpg`}
+              alt="Resilient Scents Products"
+              class="absolute inset-0 w-full h-full object-cover opacity-80"
+            />
+          </div>
+
+          <!-- Stats Card -->
+          <div class="absolute -bottom-8 -right-8 lg:right-8 p-6 bg-white text-navy-900 shadow-2xl">
+            <div class="grid grid-cols-2 gap-6">
+              <div class="text-center">
+                <span class="block font-display text-3xl font-bold text-navy-600">1000+</span>
+                <span class="text-xs text-slate-500 uppercase tracking-wide">Happy Clients</span>
+              </div>
+              <div class="text-center">
+                <span class="block font-display text-3xl font-bold text-navy-600">7</span>
+                <span class="text-xs text-slate-500 uppercase tracking-wide">Unique Blends</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-24 lg:py-32 bg-gradient-to-b from-mint-50/50 to-white relative">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+        <span class="inline-block px-4 py-1 bg-mint-100 text-navy-700 text-xs font-medium tracking-widest uppercase mb-4">
+          Love Letters
+        </span>
+        <h2 class="font-display text-4xl lg:text-5xl font-medium text-navy-900 mb-4">
+          What They're Saying
+        </h2>
+        <p class="font-body text-slate-600 leading-relaxed">
+          Real stories from our community of empowered individuals.
+        </p>
+      </div>
+
+      <!-- Testimonials Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children">
+        {testimonials.slice(0, 3).map((testimonial, index) => (
+          <TestimonialCard testimonial={testimonial} index={index} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="py-24 lg:py-32 bg-navy-600 relative overflow-hidden">
+    <!-- Decorative Elements -->
+    <div class="absolute top-0 left-0 w-64 h-64 bg-navy-500 rounded-full blur-3xl opacity-50"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-mint-500 rounded-full blur-3xl opacity-20"></div>
+
+    <div class="relative max-w-4xl mx-auto px-6 lg:px-8 text-center">
+      <div class="reveal">
+        <span class="inline-block px-4 py-1 bg-white/20 text-white text-xs font-medium tracking-widest uppercase mb-6">
+          Stay Connected
+        </span>
+        <h2 class="font-display text-4xl lg:text-5xl font-medium text-white mb-4">
+          Join the Inner Circle
+        </h2>
+        <p class="font-body text-navy-100 text-lg mb-8 max-w-xl mx-auto">
+          Be the first to know about new releases, exclusive offers, and self-care inspiration delivered straight to your inbox.
+        </p>
+
+        <!-- Newsletter Form -->
+        <!-- TODO: Replace 'xYOURFORMID' with your actual Formspree form ID for newsletter -->
+        <form class="max-w-md mx-auto" action="https://formspree.io/f/xYOURFORMID" method="POST">
+          <div class="flex flex-col sm:flex-row gap-3">
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+              class="flex-grow px-6 py-4 bg-white text-navy-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-mint-400"
+            />
+            <button type="submit" class="px-8 py-4 bg-mint-400 text-navy-900 font-medium tracking-wide hover:bg-mint-300 transition-colors whitespace-nowrap">
+              Subscribe
+            </button>
+          </div>
+          <p class="mt-3 text-xs text-navy-200">
+            No spam, ever. Unsubscribe anytime.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</MainLayout>

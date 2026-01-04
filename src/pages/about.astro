@@ -1,0 +1,250 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<MainLayout title="About" description="Meet Monique, the innovative creator behind Resilient Scents. Discover our story of empowerment, resilience, and self-love through fragrance.">
+
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-24 lg:pt-40 lg:pb-32 bg-gradient-to-b from-mint-100/50 via-white to-white overflow-hidden">
+    <!-- Background Elements -->
+    <div class="absolute top-20 right-0 w-[500px] h-[500px] bg-gradient-to-br from-mint-200/30 to-mint-300/20 blob opacity-50 blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-navy-100/20 to-mint-200/10 blob-2 opacity-40 blur-3xl"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center">
+        <span class="inline-block px-4 py-1 bg-mint-100 text-navy-700 text-xs font-medium tracking-widest uppercase mb-6 animate-fade-in">
+          Our Story
+        </span>
+        <h1 class="font-display text-5xl lg:text-6xl font-medium text-navy-900 mb-6 animate-fade-in-up animation-delay-100">
+          Where Passion Meets
+          <span class="block text-gradient">Purpose</span>
+        </h1>
+        <p class="font-body text-xl text-slate-600 leading-relaxed animate-fade-in-up animation-delay-200">
+          Every scent tells a story. This is ours.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder Story -->
+  <section class="py-24 lg:py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <!-- Image -->
+        <div class="relative reveal">
+          <div class="aspect-[4/5] bg-gradient-to-br from-mint-100 via-white to-navy-50 rounded-[2rem] overflow-hidden shadow-2xl shadow-navy-900/10">
+            <img
+              src={`${base}images/products-group.jpg`}
+              alt="Resilient Scents Products"
+              class="absolute inset-0 w-full h-full object-cover"
+            />
+          </div>
+
+          <!-- Decorative Elements -->
+          <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-mint-500/10 blob"></div>
+          <div class="absolute -top-6 -left-6 w-24 h-24 bg-navy-500/10 blob-2"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="reveal">
+          <span class="inline-block px-4 py-1 bg-mint-100 text-navy-700 text-xs font-medium tracking-widest uppercase mb-6">
+            Meet Monique
+          </span>
+          <h2 class="font-display text-4xl lg:text-5xl font-medium text-navy-900 mb-6 leading-tight">
+            The Visionary Behind<br />
+            <span class="text-navy-600">Resilient Scents</span>
+          </h2>
+
+          <div class="space-y-6 font-body text-lg text-slate-600 leading-relaxed">
+            <p>
+              <span class="font-display text-2xl text-navy-900 leading-none">"</span>Hello, I'm Monique, the innovative creator behind Resilient Scents, a brand that redefines self-care through captivating fragrance oils and body butters for both men and women.
+            </p>
+            <p>
+              My passion for crafting unique scents goes beyond mere fragrance; I am dedicated to <strong class="text-navy-900">empowering individuals to embrace their resilience</strong>. Every blend I create is a love letter to those who choose to show up for themselves, even on the hard days.
+            </p>
+            <p>
+              Resilient Scents offers a curated collection of fragrance oils and body butters that not only elevate your senses but also celebrate the strength within. With my artistic touch, each scent is a carefully crafted blend that embodies confidence, resilience, and a commitment to self-love.
+            </p>
+            <p class="border-l-4 border-mint-400 pl-4 italic text-slate-700">
+              "Discover a new way to pamper yourself and amplify your aura with Resilient Scents, where creativity meets the essence of empowerment in every drop."
+            </p>
+          </div>
+
+          <div class="mt-8 flex items-center gap-6">
+            <a href={`${base}shop/`} class="btn-primary">
+              Shop the Collection
+            </a>
+            <a href={`${base}contact/`} class="btn-ghost">
+              Get in Touch
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Values -->
+  <section class="py-24 lg:py-32 bg-navy-800 text-white relative overflow-hidden">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute inset-0" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+        <span class="inline-block px-4 py-1 bg-mint-500/20 text-mint-300 text-xs font-medium tracking-widest uppercase mb-6">
+          Our Mission
+        </span>
+        <h2 class="font-display text-4xl lg:text-5xl font-medium mb-6">
+          Empowerment Through<br />
+          <span class="text-mint-400">Every Sense</span>
+        </h2>
+        <p class="font-body text-xl text-slate-300">
+          We believe that how you care for yourself ripples outward. Our mission is to create fragrances that remind you of your own strength.
+        </p>
+      </div>
+
+      <!-- Values Grid -->
+      <div class="grid md:grid-cols-3 gap-8 stagger-children">
+        <div class="p-8 bg-navy-700/50 backdrop-blur-sm text-center">
+          <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-mint-400 to-mint-500 rounded-full flex items-center justify-center">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+          </div>
+          <h3 class="font-display text-2xl font-medium text-white mb-3">Self-Love First</h3>
+          <p class="text-slate-300">
+            We create products that make you feel cherished. Because caring for yourself isn't indulgence—it's essential.
+          </p>
+        </div>
+
+        <div class="p-8 bg-navy-700/50 backdrop-blur-sm text-center">
+          <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-mint-400 to-mint-500 rounded-full flex items-center justify-center">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="font-display text-2xl font-medium text-white mb-3">Ethical Always</h3>
+          <p class="text-slate-300">
+            100% vegan and cruelty-free. We believe beautiful products shouldn't come at the cost of our values.
+          </p>
+        </div>
+
+        <div class="p-8 bg-navy-700/50 backdrop-blur-sm text-center">
+          <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-mint-400 to-mint-500 rounded-full flex items-center justify-center">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+            </svg>
+          </div>
+          <h3 class="font-display text-2xl font-medium text-white mb-3">Artisan Craft</h3>
+          <p class="text-slate-300">
+            Each blend is thoughtfully composed, balancing notes to create scents that evolve uniquely on every skin.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Craft Section -->
+  <section class="py-24 lg:py-32 bg-gradient-to-b from-white to-mint-50/30">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <!-- Content -->
+        <div class="order-2 lg:order-1 reveal">
+          <span class="inline-block px-4 py-1 bg-mint-100 text-navy-700 text-xs font-medium tracking-widest uppercase mb-6">
+            The Craft
+          </span>
+          <h2 class="font-display text-4xl lg:text-5xl font-medium text-navy-900 mb-6 leading-tight">
+            Made with Intention,<br />
+            <span class="text-navy-600">Worn with Pride</span>
+          </h2>
+
+          <div class="space-y-6">
+            <div class="flex gap-4 items-start">
+              <div class="flex-shrink-0 w-12 h-12 bg-mint-100 rounded-lg flex items-center justify-center">
+                <span class="font-display text-xl font-bold text-navy-600">01</span>
+              </div>
+              <div>
+                <h3 class="font-display text-xl font-medium text-navy-900 mb-2">Premium Carrier Oils</h3>
+                <p class="text-slate-600">We use only the finest jojoba, argan, and sweet almond oils that nourish your skin while carrying the fragrance.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4 items-start">
+              <div class="flex-shrink-0 w-12 h-12 bg-mint-100 rounded-lg flex items-center justify-center">
+                <span class="font-display text-xl font-bold text-navy-600">02</span>
+              </div>
+              <div>
+                <h3 class="font-display text-xl font-medium text-navy-900 mb-2">Complex Fragrance Compositions</h3>
+                <p class="text-slate-600">Each scent is layered with top, heart, and base notes that unfold over hours, telling a complete story on your skin.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4 items-start">
+              <div class="flex-shrink-0 w-12 h-12 bg-mint-100 rounded-lg flex items-center justify-center">
+                <span class="font-display text-xl font-bold text-navy-600">03</span>
+              </div>
+              <div>
+                <h3 class="font-display text-xl font-medium text-navy-900 mb-2">Small Batch Excellence</h3>
+                <p class="text-slate-600">Every batch is carefully crafted in small quantities to ensure quality and freshness in every bottle.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual -->
+        <div class="order-1 lg:order-2 relative reveal">
+          <div class="aspect-square bg-gradient-to-br from-mint-100 via-white to-navy-50 rounded-[2rem] overflow-hidden">
+            <img
+              src={`${base}images/products-lineup.jpg`}
+              alt="Resilient Scents Crafting Process"
+              class="absolute inset-0 w-full h-full object-cover"
+            />
+          </div>
+
+          <!-- Stats -->
+          <div class="absolute -bottom-8 left-8 right-8 p-6 bg-white shadow-xl">
+            <div class="grid grid-cols-3 gap-4 text-center">
+              <div>
+                <span class="block font-display text-2xl font-bold text-navy-600">7+</span>
+                <span class="text-xs text-slate-500 uppercase tracking-wide">Unique Blends</span>
+              </div>
+              <div>
+                <span class="block font-display text-2xl font-bold text-navy-600">1K+</span>
+                <span class="text-xs text-slate-500 uppercase tracking-wide">Happy Clients</span>
+              </div>
+              <div>
+                <span class="block font-display text-2xl font-bold text-navy-600">100%</span>
+                <span class="text-xs text-slate-500 uppercase tracking-wide">Vegan</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-24 lg:py-32 bg-navy-600 relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-64 h-64 bg-navy-500 rounded-full blur-3xl opacity-50"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-mint-500 rounded-full blur-3xl opacity-20"></div>
+
+    <div class="relative max-w-4xl mx-auto px-6 lg:px-8 text-center">
+      <h2 class="font-display text-4xl lg:text-5xl font-medium text-white mb-4">
+        Ready to Find Your Scent?
+      </h2>
+      <p class="font-body text-navy-100 text-lg mb-8 max-w-xl mx-auto">
+        Discover the fragrance that speaks to your journey. Each bottle is a celebration of your strength.
+      </p>
+      <a href={`${base}shop/`} class="inline-flex items-center px-10 py-5 bg-white text-navy-900 font-medium tracking-wide hover:bg-mint-100 transition-colors">
+        Explore the Collection
+        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+    </div>
+  </section>
+
+</MainLayout>

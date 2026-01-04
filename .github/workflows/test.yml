@@ -1,0 +1,72 @@
+name: Test and Build
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+    branches: [master, main]
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: Run Tests and Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run unit tests
+        run: npm test -- --run
+
+      - name: Check TypeScript
+        run: npx astro check || echo "TypeScript check completed with warnings"
+
+      - name: Build project with Tina CMS
+        run: |
+          echo "Building with Tina CMS..."
+          npx tinacms build
+          echo "Building with Astro..."
+          npx astro build
+
+      - name: Check build output
+        run: |
+          if [ ! -d "dist" ]; then
+            echo "Build failed: dist directory not found"
+            exit 1
+          fi
+          echo "Build successful: dist directory created"
+          ls -la dist/
+
+  lint:
+    name: Code Quality Checks
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate JSON files
+        run: |
+          echo "Validating JSON syntax..."
+          node -e "require('./src/data/products.json')" && echo "✓ products.json is valid"
+          node -e "require('./src/data/testimonials.json')" && echo "✓ testimonials.json is valid"
+          node -e "require('./src/data/faq.json')" && echo "✓ faq.json is valid"

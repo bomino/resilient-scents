@@ -10,9 +10,7 @@
       "price": 25.00,
       "currency": "USD",
       "sizes": [
-        { "size": "1 oz", "price": 15.00 },
-        { "size": "2 oz", "price": 25.00 },
-        { "size": "4 oz", "price": 40.00 }
+        { "size": "2 oz", "price": 25.00 }
       ],
       "scent_notes": {
         "top": ["Bergamot", "Pepper"],
@@ -38,9 +36,7 @@
       "price": 25.00,
       "currency": "USD",
       "sizes": [
-        { "size": "1 oz", "price": 15.00 },
-        { "size": "2 oz", "price": 25.00 },
-        { "size": "4 oz", "price": 40.00 }
+        { "size": "2 oz", "price": 25.00 }
       ],
       "scent_notes": {
         "top": ["Apple", "Mint", "Lavender"],
@@ -66,9 +62,7 @@
       "price": 25.00,
       "currency": "USD",
       "sizes": [
-        { "size": "1 oz", "price": 15.00 },
-        { "size": "2 oz", "price": 25.00 },
-        { "size": "4 oz", "price": 40.00 }
+        { "size": "2 oz", "price": 25.00 }
       ],
       "scent_notes": {
         "top": ["Red Berries", "Mandarin", "Pink Freesia"],
@@ -94,9 +88,7 @@
       "price": 25.00,
       "currency": "USD",
       "sizes": [
-        { "size": "1 oz", "price": 15.00 },
-        { "size": "2 oz", "price": 25.00 },
-        { "size": "4 oz", "price": 40.00 }
+        { "size": "2 oz", "price": 25.00 }
       ],
       "scent_notes": {
         "top": ["Blood Mandarin", "Peppermint", "Grapefruit"],
@@ -122,9 +114,7 @@
       "price": 25.00,
       "currency": "USD",
       "sizes": [
-        { "size": "1 oz", "price": 15.00 },
-        { "size": "2 oz", "price": 25.00 },
-        { "size": "4 oz", "price": 40.00 }
+        { "size": "2 oz", "price": 25.00 }
       ],
       "scent_notes": {
         "top": ["Champa Flower", "Magnolia"],
@@ -147,12 +137,10 @@
       "tagline": "Elegant & Timeless",
       "category": "women",
       "type": "fragrance-oil",
-      "price": 30.00,
+      "price": 25.00,
       "currency": "USD",
       "sizes": [
-        { "size": "1 oz", "price": 18.00 },
-        { "size": "2 oz", "price": 30.00 },
-        { "size": "4 oz", "price": 48.00 }
+        { "size": "2 oz", "price": 25.00 }
       ],
       "scent_notes": {
         "top": ["Lychee", "Pink Pepper", "Pear"],
@@ -175,11 +163,10 @@
       "tagline": "Pure Nourishment",
       "category": "unisex",
       "type": "body-butter",
-      "price": 20.00,
+      "price": 25.00,
       "currency": "USD",
       "sizes": [
-        { "size": "4 oz", "price": 20.00 },
-        { "size": "8 oz", "price": 35.00 }
+        { "size": "4 oz", "price": 25.00 }
       ],
       "scent_notes": {
         "top": [],
@@ -194,6 +181,84 @@
       "images": ["/images/products-group.jpg"],
       "featured": true,
       "badge": "Essential"
+    },
+    {
+      "id": 8,
+      "slug": "nourishing-hair-oil",
+      "name": "Nourishing Hair Oil",
+      "tagline": "Shine & Strength",
+      "category": "unisex",
+      "type": "hair-oil",
+      "price": 25.00,
+      "currency": "USD",
+      "sizes": [
+        { "size": "10 oz", "price": 25.00 }
+      ],
+      "scent_notes": {
+        "top": ["Light Floral"],
+        "middle": ["Coconut"],
+        "base": ["Argan"]
+      },
+      "vibe": "Luxurious treatment for your crown. Lightweight yet deeply nourishing for healthy, radiant hair.",
+      "best_for": ["Daily hair care", "Frizz control", "Split end repair"],
+      "ingredients": "Argan Oil, Jojoba Oil, Coconut Oil, Vitamin E, Sweet Almond Oil",
+      "how_to_use": "Apply a few drops to damp or dry hair, focusing on ends. Can be used as a pre-wash treatment or daily styling aid.",
+      "warnings": "For external use only. Avoid contact with eyes. If irritation occurs, discontinue use.",
+      "images": ["/images/products-group.jpg"],
+      "featured": true,
+      "badge": "New"
+    },
+    {
+      "id": 9,
+      "slug": "peppermint-hair-oil",
+      "name": "Peppermint Hair Oil",
+      "tagline": "Cool & Invigorating",
+      "category": "unisex",
+      "type": "hair-oil",
+      "price": 25.00,
+      "currency": "USD",
+      "sizes": [
+        { "size": "10 oz", "price": 25.00 }
+      ],
+      "scent_notes": {
+        "top": ["Peppermint", "Eucalyptus"],
+        "middle": ["Tea Tree"],
+        "base": ["Jojoba"]
+      },
+      "vibe": "A refreshing tingle that awakens your scalp and senses. Cooling relief meets deep nourishment.",
+      "best_for": ["Scalp stimulation", "Hair growth", "Cooling relief"],
+      "ingredients": "Peppermint Essential Oil, Jojoba Oil, Coconut Oil, Tea Tree Oil, Vitamin E",
+      "how_to_use": "Massage into scalp and work through hair. Leave in for 15-30 minutes before washing, or use a small amount as a leave-in treatment.",
+      "warnings": "For external use only. Avoid contact with eyes. May cause tingling sensation. Discontinue if irritation occurs.",
+      "images": ["/images/products-group.jpg"],
+      "featured": true,
+      "badge": null
+    },
+    {
+      "id": 10,
+      "slug": "lemongrass-hair-oil",
+      "name": "Lemongrass Hair Oil",
+      "tagline": "Fresh & Uplifting",
+      "category": "unisex",
+      "type": "hair-oil",
+      "price": 25.00,
+      "currency": "USD",
+      "sizes": [
+        { "size": "10 oz", "price": 25.00 }
+      ],
+      "scent_notes": {
+        "top": ["Lemongrass", "Citrus"],
+        "middle": ["Green Tea"],
+        "base": ["Sweet Almond"]
+      },
+      "vibe": "Bright, citrusy freshness that lifts your mood while strengthening every strand. Nature's energizing gift for your hair.",
+      "best_for": ["Oily scalp balance", "Dandruff control", "Shine enhancement"],
+      "ingredients": "Lemongrass Essential Oil, Sweet Almond Oil, Grapeseed Oil, Green Tea Extract, Vitamin E",
+      "how_to_use": "Apply to scalp and hair, massaging gently. Use as a pre-wash treatment or apply sparingly to dry hair for shine and fragrance.",
+      "warnings": "For external use only. Avoid contact with eyes. Patch test recommended for sensitive skin.",
+      "images": ["/images/products-group.jpg"],
+      "featured": true,
+      "badge": null
     }
   ]
 }

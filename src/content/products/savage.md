@@ -8,14 +8,8 @@ price: 25
 currency: "USD"
 sizes:
   -
-      size: "1 oz"
-      price: 15
-  -
       size: "2 oz"
       price: 25
-  -
-      size: "4 oz"
-      price: 40
 scent_notes:
   top:
     - "Bergamot"

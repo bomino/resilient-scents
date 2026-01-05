@@ -4,15 +4,12 @@ name: "Unscented Body Butter"
 tagline: "Pure Nourishment"
 category: "unisex"
 type: "body-butter"
-price: 20
+price: 25
 currency: "USD"
 sizes:
   -
       size: "4 oz"
-      price: 20
-  -
-      size: "8 oz"
-      price: 35
+      price: 25
 scent_notes:
   top: []
   middle: []

@@ -4,18 +4,12 @@ name: "Belle"
 tagline: "Elegant & Timeless"
 category: "women"
 type: "fragrance-oil"
-price: 30
+price: 25
 currency: "USD"
 sizes:
   -
-      size: "1 oz"
-      price: 18
-  -
       size: "2 oz"
-      price: 30
-  -
-      size: "4 oz"
-      price: 48
+      price: 25
 scent_notes:
   top:
     - "Lychee"

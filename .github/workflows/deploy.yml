@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [master]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -36,12 +36,14 @@ jobs:
       - name: Type check
         run: npx astro check || true
 
-      - name: Build with Tina CMS and Astro
+      - name: Build with Astro
         run: |
-          echo "Building with Tina CMS..."
-          npx tinacms build
           echo "Building with Astro..."
           npx astro build
+        env:
+          # TinaCMS Cloud credentials (optional - add as GitHub secrets when ready)
+          TINA_CLIENT_ID: ${{ secrets.TINA_CLIENT_ID }}
+          TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
 
       - name: Verify build output
         run: |

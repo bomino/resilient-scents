@@ -31,12 +31,14 @@ jobs:
       - name: Check TypeScript
         run: npx astro check || echo "TypeScript check completed with warnings"
 
-      - name: Build project with Tina CMS
+      - name: Build project with Astro
         run: |
-          echo "Building with Tina CMS..."
-          npx tinacms build
           echo "Building with Astro..."
           npx astro build
+        env:
+          # TinaCMS Cloud credentials (optional - add as GitHub secrets when ready)
+          TINA_CLIENT_ID: ${{ secrets.TINA_CLIENT_ID }}
+          TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
 
       - name: Check build output
         run: |

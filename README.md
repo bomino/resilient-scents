@@ -95,7 +95,8 @@ Visit `http://localhost:4321/resilient-scents/` to view the site locally.
 
 ```bash
 npm run dev          # Start development server with Tina CMS
-npm run build        # Build for production with Tina
+npm run build        # Build for production (Astro only)
+npm run build:tina   # Build with Tina CMS (requires cloud credentials)
 npm run preview      # Preview production build
 npm test             # Run tests in watch mode
 npm test -- --run    # Run tests once
@@ -169,7 +170,7 @@ npm run test:ui
 
 ## 🚢 Deployment
 
-The site automatically deploys to GitHub Pages when changes are pushed to the `master` branch.
+The site automatically deploys to GitHub Pages when changes are pushed to the `main` branch.
 
 ### Manual Deployment
 
@@ -192,7 +193,7 @@ Our comprehensive CI/CD includes:
 - **Build Verification**: Ensures successful builds
 - **Performance Monitoring**: Lighthouse CI audits
 - **Dependency Updates**: Automated via Dependabot
-- **Auto-deployment**: Pushes to master deploy automatically
+- **Auto-deployment**: Pushes to main deploy automatically
 
 ## 📊 Performance
 
@@ -211,12 +212,29 @@ See the [CMS_GUIDE.md](CMS_GUIDE.md) for detailed instructions on managing produ
 
 ### Accessing the CMS
 1. **Local Development**: Run `npm run dev` and visit `/admin`
-2. **Production**: Configure Tina Cloud at [tina.io](https://tina.io)
+2. **Production**: Configure Tina Cloud (see below)
 
 ### Content Types
 - **Products**: Full product catalog with variants and pricing
 - **Testimonials**: Customer reviews and ratings
 - **FAQs**: Frequently asked questions by category
+
+### Setting Up TinaCMS Cloud (Optional)
+
+To enable content editing in production, set up TinaCMS Cloud:
+
+1. **Create a Tina Cloud account** at [tina.io](https://tina.io)
+2. **Create a new project** and connect it to your GitHub repository
+3. **Get your credentials**:
+   - `Client ID` from your Tina Cloud dashboard
+   - `Read-Only Token` for production builds
+4. **Add GitHub repository secrets**:
+   - Go to your repo → Settings → Secrets and variables → Actions
+   - Add `TINA_CLIENT_ID` with your Client ID
+   - Add `TINA_TOKEN` with your Read-Only Token
+5. **Update build script** (optional): Change `npm run build` to `npm run build:tina` in your workflow if you want Tina-enabled builds
+
+> **Note**: The site works without TinaCMS Cloud credentials. Content can still be edited locally using `npm run dev` and committed to the repository. TinaCMS Cloud is only needed if you want browser-based content editing in production.
 
 ## 🔧 Configuration
 

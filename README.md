@@ -1,38 +1,9 @@
-# Resilient Scents 🌿
+# Resilient Scents
 
 <div align="center">
 
-[![Deploy to GitHub Pages](https://github.com/bomino/resilient-scents/actions/workflows/deploy.yml/badge.svg)](https://github.com/bomino/resilient-scents/actions/workflows/deploy.yml)
-[![Test and Build](https://github.com/bomino/resilient-scents/actions/workflows/test.yml/badge.svg)](https://github.com/bomino/resilient-scents/actions/workflows/test.yml)
-[![Lighthouse CI](https://github.com/bomino/resilient-scents/actions/workflows/lighthouse.yml/badge.svg)](https://github.com/bomino/resilient-scents/actions/workflows/lighthouse.yml)
-
-[![GitHub stars](https://img.shields.io/github/stars/bomino/resilient-scents?style=social)](https://github.com/bomino/resilient-scents/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/bomino/resilient-scents?style=social)](https://github.com/bomino/resilient-scents/network/members)
-[![GitHub watchers](https://img.shields.io/github/watchers/bomino/resilient-scents?style=social)](https://github.com/bomino/resilient-scents/watchers)
-
-[![Astro](https://img.shields.io/badge/Astro-v5.16.6-FF5D01?logo=astro&logoColor=white)](https://astro.build/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v3.4.19-06B6D4?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-v5.x-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Node.js](https://img.shields.io/badge/Node.js-v20.x-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
-
-[![GitHub last commit](https://img.shields.io/github/last-commit/bomino/resilient-scents)](https://github.com/bomino/resilient-scents/commits/master)
-[![GitHub issues](https://img.shields.io/github/issues/bomino/resilient-scents)](https://github.com/bomino/resilient-scents/issues)
-[![GitHub pull requests](https://img.shields.io/github/issues-pr/bomino/resilient-scents)](https://github.com/bomino/resilient-scents/pulls)
-[![License](https://img.shields.io/badge/License-Proprietary-red)](LICENSE)
-
+[![Deploy](https://github.com/bomino/resilient-scents/actions/workflows/deploy.yml/badge.svg?branch=main)](https://github.com/bomino/resilient-scents/actions/workflows/deploy.yml)
 [![Website](https://img.shields.io/website?url=https%3A%2F%2Fbomino.github.io%2Fresilient-scents%2F&label=Live%20Site)](https://bomino.github.io/resilient-scents/)
-[![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-Active-00A86B)](https://bomino.github.io/resilient-scents/)
-[![Dependabot](https://img.shields.io/badge/Dependabot-Enabled-025E8C?logo=dependabot)](https://github.com/bomino/resilient-scents/network/updates)
-
-[![Lighthouse Performance](https://img.shields.io/badge/Lighthouse_Performance-85%2B-green)](https://github.com/bomino/resilient-scents/actions/workflows/lighthouse.yml)
-[![Lighthouse Accessibility](https://img.shields.io/badge/Lighthouse_Accessibility-90%2B-green)](https://github.com/bomino/resilient-scents/actions/workflows/lighthouse.yml)
-[![Lighthouse Best Practices](https://img.shields.io/badge/Lighthouse_Best_Practices-90%2B-green)](https://github.com/bomino/resilient-scents/actions/workflows/lighthouse.yml)
-[![Lighthouse SEO](https://img.shields.io/badge/Lighthouse_SEO-90%2B-green)](https://github.com/bomino/resilient-scents/actions/workflows/lighthouse.yml)
-
-[![Tests](https://img.shields.io/badge/Tests-21_Passing-success?logo=vitest&logoColor=white)](https://github.com/bomino/resilient-scents/actions/workflows/test.yml)
-[![Code Style](https://img.shields.io/badge/Code_Style-Prettier-ff69b4?logo=prettier&logoColor=white)](https://prettier.io/)
-[![Semantic Versioning](https://img.shields.io/badge/Semantic_Versioning-1.0.0-blue)](https://semver.org/)
-[![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](https://github.com/bomino/resilient-scents/pulls)
 
 </div>
 
